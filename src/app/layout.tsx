@@ -37,10 +37,11 @@ export const metadata: Metadata = {
   robots: "follow, index",
   icons: {
     icon: [
-      { url: "/favicon.svg", sizes: "any" },
+      { url: "/favicon.ico", sizes: "any", type: "image/x-icon" },
       { url: "/icon.png", sizes: "32x32", type: "image/png" },
     ],
     apple: "/icon.png",
+    shortcut: "/favicon.ico",
   },
   openGraph: {
     type: "website",
