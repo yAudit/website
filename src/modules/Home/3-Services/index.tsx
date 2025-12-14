@@ -5,7 +5,7 @@ import Image from "next/image";
 const features = [
   {
     name: "ZK & Smart Contract Expertise",
-    description: "Get your codebase audited by our top-tier resident auditors",
+    description: "Get your codebase audited by our top-tier resident auditors. Whether it is ZK cryptography or DeFi protocols - we tackle it all",
     href: "/services",
     cta: "Learn more",
     className: "",
@@ -14,7 +14,7 @@ const features = [
         <img
           alt=""
           src="/fellowship.png"
-          className="h-[10rem] mx-auto transition-all ease-out hover:blur-none duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_20%,#000_100%)] group-hover:scale-105"
+          className="h-[10rem] mx-auto transition-all ease-out hover:blur-none duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)] group-hover:scale-105"
         />{" "}
       </>
     ),
@@ -31,7 +31,7 @@ const features = [
         <img
           alt=""
           src="/team.jpeg"
-          className="h-[12rem] mx-auto transition-all  ease-out hover:blur-none duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_20%,#000_100%)] group-hover:scale-105"
+          className="h-[12rem] mx-auto transition-all  ease-out hover:blur-none duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105"
         />
       </>
     ),
@@ -48,7 +48,7 @@ const features = [
         <img
           alt=""
           src="/dd.png"
-          className="h-[12rem] mx-auto transition-all ease-out hover:blur-none duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_20%,#000_100%)] group-hover:scale-105"
+          className="h-[12rem] mx-auto transition-all ease-out hover:blur-none duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)] group-hover:scale-105"
         />
       </>
     ),

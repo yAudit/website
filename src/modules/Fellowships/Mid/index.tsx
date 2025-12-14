@@ -51,12 +51,12 @@ export default function Summary() {
     const handleHashChange = () => {
       const hash = window.location.hash;
       setCurrentTab(getTabFromHash(hash));
-      
-      // Scroll to the section with a small delay to ensure content is rendered
+
+      // Scroll to the "Choose your hard" heading
       setTimeout(() => {
-        const element = hash ? document.querySelector(hash) : null;
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+        const element = document.getElementById('fellowship-tabs-section');
+        if (element && hash) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       }, 100);
     };
@@ -64,7 +64,7 @@ export default function Summary() {
     // Listen for hash changes
     window.addEventListener('hashchange', handleHashChange);
 
-    // Initial scroll if needed
+    // Initial hash handling
     handleHashChange();
 
     return () => {
@@ -77,16 +77,17 @@ export default function Summary() {
     if (typeof window !== 'undefined') {
       // Update URL hash without triggering a page reload
       window.history.pushState(null, '', tab.href);
-      // Manually trigger the scroll
-      const element = document.querySelector(tab.href);
+
+      // Scroll to the "Choose your hard" heading
+      const element = document.getElementById('fellowship-tabs-section');
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
   };
 
   return (
-    <div className="my-16">
+    <div className="my-16" id="fellowship-tabs-section">
       <h2 className="text-3xl font-bold text-center mb-8">Choose your hard</h2>
       <div className="sm:block">
         <div className="border border-deepblue">

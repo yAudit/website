@@ -1,5 +1,4 @@
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
-import Image from "next/image";
 
 const features = [
   {
@@ -13,14 +12,14 @@ const features = [
         <img
           alt=""
           src="./illustrations/sc.svg"
-          className="h-[10rem] mx-auto transition-all ease-out hover:blur-none duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_20%,#000_100%)] group-hover:scale-105"
+          className="h-[12rem] mx-auto transition-all ease-out hover:blur-none duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)] group-hover:scale-105"
         />
       </>
     ),
   },
   {
     name: "ZK Fellowships",
-    description: "2-3 months, you will be challenged",
+    description: "2-3 months, you will be challenged with Circuits or Cryptographic protocols",
     href: "/fellowships#zero-knowledge",
     cta: "Apply",
     className: "",
@@ -29,7 +28,7 @@ const features = [
         <img
           alt=""
           src="./illustrations/rust-window.svg"
-          className="h-[12rem] mx-auto transition-all ease-out hover:blur-none duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_20%,#000_100%)] group-hover:scale-105"
+          className="h-[12rem] mx-auto transition-all ease-out hover:blur-none duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)] group-hover:scale-105"
         />
       </>
     ),
@@ -37,7 +36,7 @@ const features = [
   {
     name: "Guest Auditor Program",
     description:
-      "field experts leading audits and mentoring fellows alongside our residents",
+      "field experts leading audits and mentoring fellows alongside our team",
     href: "/fellowships#guest-auditor",
     cta: "Apply",
     className: "",
@@ -46,7 +45,7 @@ const features = [
         <img
           alt=""
           src="/ga.jpeg"
-          className="h-[12rem] mx-auto transition-all ease-out hover:blur-none duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_20%,#000_100%)] group-hover:scale-105"
+          className="h-[12rem] mx-auto transition-all ease-out hover:blur-none duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)] group-hover:scale-105"
         />
       </>
     ),

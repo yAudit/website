@@ -11,7 +11,7 @@ interface Props {
 
 function Button({ text }: { text: string }) {
   return (
-    <button className="px-6 py-3 text-sm text-zinc-400 hover:text-deepblue hover:bg-white hover:bg-opacity-5 duration-700">
+    <button className="px-5 py-3 text-sm text-zinc-400 hover:text-deepblue hover:bg-white hover:bg-opacity-5 duration-700">
       {text}
     </button>
   );
@@ -20,7 +20,7 @@ function Button({ text }: { text: string }) {
 export function Navbar({ menuOpen, setMenuOpen }: Props) {
   return (
     <div className="w-full flex h-18 items-center justify-between top-0 py-6">
-      <div className="flex flex-row gap-4 text-deepblue items-center text-xl lg:ml-[20vw] ml-4">
+      <div className="flex flex-row text-deepblue items-center text-xl lg:ml-[19vw] ml-4">
         <Link href={"/"}>
           <img alt="" src="/logo.svg" className="h-10" />
         </Link>
@@ -31,7 +31,7 @@ export function Navbar({ menuOpen, setMenuOpen }: Props) {
       >
         <MenuOutlined />
       </button>
-      <div className="flex flex-row items-center gap-1 sm:hidden md:hidden lg:mr-[20vw]">
+      <div className="flex flex-row items-center sm:hidden md:hidden lg:mr-[18vw]">
         <a href="https://reports.yaudit.dev/">
           <Button text={"Reports"} />
         </a>
