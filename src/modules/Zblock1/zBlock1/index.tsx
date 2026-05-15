@@ -1,4 +1,4 @@
-/* eslint-disable react/no-unescaped-entities */
+ 
 import Link from "next/link";
 import { m1video, m1exercises, m1notes, m1discussion } from "../Data/zblock1";
 import {
@@ -86,9 +86,8 @@ function ZBlock1Modules() {
           </p>
         </div>
       </div>
-      <h1
-        className="text-4xl  font-bold text-center mt-40 mb-20"
-        id="module-1"
+      <h1 className="text-4xl font-bold text-center mt-40 mb-20"
+        id="participants"
       >
         Participants
       </h1>
@@ -213,7 +212,7 @@ function ZBlock1Modules() {
         </div>
         <div className="col-span-1">
           <h1 id="materials1" className="text-2xl font-bold mt-8 mb-4">
-            Supplimentary Materials
+            Supplementary Materials
           </h1>
           <div className="flex flex-row gap-4 p-4 items-center bg-zinc-50 border border-zinc-100">
             <Notes notes={m1notes} />

@@ -5,14 +5,14 @@ export default function Fellows() {
   return (
     <>
       <div className="lg:grid md:grid sm:flex grid-cols-2 gap-16 sm:flex-col my-16 justify-between">
-        <div className="lg:cols-span-1 md:cols-span-1 ">
+        <div className="lg:col-span-1 md:col-span-1 ">
           <img
             alt="Boosted Audits"
             src="/team.jpeg"
             className="lg:h-[26rem] md:h-[16rem] justify-self-center object-cover"
           />
         </div>
-        <div className="lg:cols-span-1 md:cols-span-1 flex flex-col">
+        <div className="lg:col-span-1 md:col-span-1 flex flex-col">
           <h2 className="lg:text-4xl text-3xl font-bold">
             Boosted Audits
           </h2>
@@ -27,7 +27,7 @@ export default function Fellows() {
             This unique model combines the depth of expert analysis with the breadth of crowdsourced security review, ensuring comprehensive coverage at multiple security layers. Past boosted audits have uncovered critical issues that traditional audits missed, protecting millions in user funds.
           </p>
           <Link href={"/contact-us"}>
-            <button className="px-8 py-3 sm:w-full text-md text-white text-bold bg-deepblue hover:bg-white hover:text-deepblue hover:border hover:border-deepblue duration-700">
+            <button className="px-8 py-3 sm:w-full text-base text-white font-bold bg-deepblue hover:bg-white hover:text-deepblue hover:border hover:border-deepblue duration-700">
               Start your Audit
             </button>
           </Link>

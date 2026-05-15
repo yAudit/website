@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+ 
 
 import React from "react";
 import { CalendarIcon, MailIcon, PencilIcon, BookCopyIcon } from "lucide-react";
@@ -20,7 +20,7 @@ export default function Footer() {
       <img alt="" src="/logo.svg" className="h-[5rem]" />
       <DockDemo />
       <p className="text-sm text-zinc-500 mt-10 text-center">
-        Copyright © 2025 yAudit. All rights reserved.
+        Copyright © {new Date().getFullYear()} yAudit. All rights reserved.
       </p>
     </div>
   );

@@ -207,7 +207,7 @@ function BoostedAuditsSection() {
                 <div className="grid grid-cols-1 w-full">
                 <button
                   onClick={() => window.open(audit.reportLink, '_blank')}
-                  className="flex items-center justify-center gap-2 px-6 py-3 text-md text-white text-bold bg-deepblue hover:bg-white hover:text-deepblue hover:border hover:border-deepblue duration-700"
+                  className="flex items-center justify-center gap-2 px-6 py-3 text-base text-white font-bold bg-deepblue hover:bg-white hover:text-deepblue hover:border hover:border-deepblue duration-700"
                 >
                   View Report
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

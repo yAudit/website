@@ -50,7 +50,7 @@ export default function ContactUs() {
           );
         })
         .finally((): void => {
-          (document.getElementById("contact-form") as HTMLFormElement)?.reset();
+          formRef.current?.reset();
           setIsBusy(false);
           setTimeout((): void => {
             setIsDisabled(false);
@@ -59,7 +59,6 @@ export default function ContactUs() {
     } catch (error) {
       console.error("Error:", error);
       setResponse("Sorry, something went wrong. Please try again later.");
-    } finally {
       setIsBusy(false);
       setTimeout(() => setIsDisabled(false), 10000);
     }

@@ -508,7 +508,7 @@ function DreamTeamSection() {
                     <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-2">Key Projects:</h4>
                     <div className="space-y-1">
                       {teamMembers[selectedMember].keyProjects?.slice(0, 10).map((project, idx) => (
-                        <div key={idx} className="flex items-center justify-between p-2transition-colors">
+                        <div key={idx} className="flex items-center justify-between p-2 transition-colors">
                           <div className="flex-1 min-w-0">
                             <h5 className="font-medium text-gray-900 text-sm truncate">{project.name}</h5>
                             <p className="text-gray-600 text-xs truncate">{project.description}</p>

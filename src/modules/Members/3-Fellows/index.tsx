@@ -124,18 +124,18 @@ export function Template({
                   "rounded-full items-center" +
                   ` ${
                     person.promotedToResident
-                      ? `h-19 w-11 sm:h-8 sm:w-9 sm:mb-2 `
+                      ? `h-[4.75rem] w-11 sm:h-8 sm:w-9 sm:mb-2 `
                       : `h-11 w-11 ml-1 sm:h-9 sm:w-9 sm:mb-2`
                   }`
                 }
                 src={
                   person.avatar || person.url?.includes("github")
                     ? person.avatar ||
-                      "https://avatars.githubusercontent.com/" +
-                        person.url.split("github.com")[1]
+                      "https://avatars.githubusercontent.com" +
+                        new URL(person.url).pathname
                     : "./members/resident.png"
                 }
-                alt="Core"
+                alt={person.name}
               />
               <div>
                 <h3

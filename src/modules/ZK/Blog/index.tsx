@@ -164,7 +164,7 @@ function FeaturedResearchHighlight() {
         {/* CTA Section */}
         <div className="grid grid-cols-1 w-full">
           <a href="https://research.yaudit.dev/mpc" target="_blank" rel="noopener noreferrer">
-            <button className="flex items-center justify-center gap-2 px-6 py-3 text-md text-white text-bold bg-deepblue hover:bg-white hover:text-deepblue hover:border hover:border-deepblue duration-700 w-full">
+            <button className="flex items-center justify-center gap-2 px-6 py-3 text-base text-white font-bold bg-deepblue hover:bg-white hover:text-deepblue hover:border hover:border-deepblue duration-700 w-full">
               View Research
               {/* <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" /> */}
             </button>

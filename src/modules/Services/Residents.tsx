@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+ 
 import Link from "next/link";
 
 export default function Residents() {
@@ -8,9 +8,9 @@ export default function Residents() {
         <img
           alt="ZK & Smart Contract Expertise"
           src="/fellowship.png"
-          className="lg:cols-span-1 md:cols-span-1 justify-self-center lg:h-[24rem] md:h-[10rem] object-cover"
+          className="lg:col-span-1 md:col-span-1 justify-self-center lg:h-[24rem] md:h-[10rem] object-cover"
         />
-        <div className="lg:cols-span-1 md:cols-span-1 flex flex-col">
+        <div className="lg:col-span-1 md:col-span-1 flex flex-col">
           <h2 className="lg:text-4xl text-3xl font-bold ">
             ZK & Smart Contract
           </h2>
@@ -28,7 +28,7 @@ export default function Residents() {
             Whether you're building zkSNARKs, zkSTARKs, or complex DeFi protocols, our auditors provide the expertise needed to identify vulnerabilities before deployment.
           </p>
           <Link href={"/contact-us"}>
-            <button className="px-8 py-3 sm:w-full text-md text-white text-bold bg-deepblue hover:bg-white hover:text-deepblue hover:border hover:border-deepblue duration-700">
+            <button className="px-8 py-3 sm:w-full text-base text-white font-bold bg-deepblue hover:bg-white hover:text-deepblue hover:border hover:border-deepblue duration-700">
               Get an Audit
             </button>
           </Link>

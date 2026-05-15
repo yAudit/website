@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+ 
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -72,7 +72,7 @@ const clients = [
     website: "https://pse.dev/en",
   },
   {
-    name: "Olumpus DAO",
+    name: "Olympus DAO",
     logo: "olympus.svg",
     website: "https://www.olympusdao.finance/",
   },

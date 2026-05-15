@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+ 
 import Link from "next/link";
 import {
   m1video,
@@ -94,7 +94,7 @@ function ZBlock2Modules() {
         </div>
         <h1
           className="text-4xl  font-bold text-center mt-20 mb-20"
-          id="module-1"
+          id="participants"
         >
           Participants
         </h1>
@@ -226,7 +226,7 @@ function ZBlock2Modules() {
               <Discussion chat={m1discussion} />
             </div>
             <h1 className="text-2xl font-bold my-4">Supplementary Materials</h1>
-            <div className="flex flex-col gap-6 p-4 items-left bg-zinc-50 border border-zinc-100">
+            <div className="flex flex-col gap-6 p-4 items-start bg-zinc-50 border border-zinc-100">
               {m1notes.map((exercise) => {
                 return <Notes notes={exercise} key={exercise.link} />;
               })}
@@ -234,11 +234,11 @@ function ZBlock2Modules() {
                 return <Trophy trophy={item} key={item.link} />;
               })}
             </div>
-            {/* <div className="flex flex-col gap-6 p-4 items-left bg-zinc-50 border border-zinc-100">
+            {/* <div className="flex flex-col gap-6 p-4 items-start bg-zinc-50 border border-zinc-100">
               
             </div> */}
             <h1 className="text-2xl font-bold my-4">Exercises</h1>
-            <div className="flex flex-col gap-6 p-4 items-left bg-zinc-50 border border-zinc-100">
+            <div className="flex flex-col gap-6 p-4 items-start bg-zinc-50 border border-zinc-100">
               {m1exercises.map((exercise) => {
                 return <Quiz quiz={exercise} key={exercise.link} />;
               })}
@@ -258,7 +258,7 @@ function ZBlock2Modules() {
             <h1 className="text-2xl font-bold">Sessions</h1>
             <VideoSection videoData={m2video} />
             <h1 className="text-2xl font-bold my-4">Supplementary Materials</h1>
-            <div className="flex flex-col gap-6 p-4 items-left bg-zinc-50 border border-zinc-100">
+            <div className="flex flex-col gap-6 p-4 items-start bg-zinc-50 border border-zinc-100">
               {m2notes.map((exercise) => {
                 return <Notes notes={exercise} key={exercise.link} />;
               })}

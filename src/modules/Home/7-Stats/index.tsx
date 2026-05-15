@@ -16,25 +16,25 @@ export function AuditStats() {
       />
       <div className="lg:mx-[20vw] lg:my-24  md:my-20 sm:my-8 flex flex-col gap-12">
         <div className="grid grid-cols-3 sm:grid-cols-1 gap-2 sm:gap-4">
-          <div className="flex flex-col items-center justify-center cols-span-1 ">
+          <div className="flex flex-col items-center justify-center col-span-1 ">
             <NumberTickerDemo num={2} text="Bn +" />
             <p>TVL Secured</p>
           </div>
-          <div className="flex flex-col items-center justify-center cols-span-1">
+          <div className="flex flex-col items-center justify-center col-span-1">
             <NumberTickerDemo num={59} text="" />
             <p>Audits in 2024</p>
           </div>
-          <div className="flex flex-col items-center justify-center cols-span-1">
+          <div className="flex flex-col items-center justify-center col-span-1">
             <NumberTickerDemo num={80} text="%" />
             <p>Return Customers</p>
           </div>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-1 gap-2 sm:gap-8">
-          <div className="flex flex-col items-center justify-center cols-span-1">
+          <div className="flex flex-col items-center justify-center col-span-1">
             <NumberTickerDemo num={150} text="+" />
             <p>Fellows Graduated</p>
           </div>
-          <div className="flex flex-col items-center justify-center cols-span-1">
+          <div className="flex flex-col items-center justify-center col-span-1">
             <NumberTickerDemo num={8} text="" />
             <p>Fellowships Completed since 2022</p>
           </div>

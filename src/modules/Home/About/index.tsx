@@ -5,7 +5,7 @@ export const About = () => {
         About the Team
       </h2>
       <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-8 text-zinc-700  mt-8">
-        <div className="cols-span-1 text-md">
+        <div className="col-span-1 text-base">
           <p className="">
             yAudit is focused on smart contracts and zero-knowledge security:{" "}
             <i className="font-semibold">
@@ -62,7 +62,7 @@ export const About = () => {
             for our 2nd incubation fellowship, for which we are grateful.
           </p>
         </div>
-        <div className="lg:cols-span-1 sm:hidden md:hidden">
+        <div className="lg:col-span-1 sm:hidden md:hidden">
           <img
             src="/team.jpeg"
             alt="Team"

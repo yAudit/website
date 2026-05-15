@@ -157,7 +157,7 @@ export default function Research() {
           <br />
         </p>
         <a target="_blank" href="https://blog.yaudit.dev/">
-          <button className="px-8 py-3 sm:w-full text-md text-white text-bold bg-deepblue hover:bg-white hover:text-deepblue hover:border hover:border-deepblue duration-700">
+          <button className="px-8 py-3 sm:w-full text-base text-white font-bold bg-deepblue hover:bg-white hover:text-deepblue hover:border hover:border-deepblue duration-700">
             Technical Blog Posts
           </button>
         </a>

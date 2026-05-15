@@ -95,7 +95,7 @@ export default function Summary() {
                 className="col-span-1"
               >
                 <button
-                  className={`w-full p-3 text-md hover:bg-deepblue hover:text-white duration-700 ${
+                  className={`w-full p-3 text-base hover:bg-deepblue hover:text-white duration-700 ${
                     tab.name === currentTab
                       ? "bg-deepblue bg-opacity-100 text-white"
                       : "text-deepblue"

@@ -237,7 +237,7 @@ function Highlights() {
                   profileUrl: `https://github.com/${author.name}`
                   }))}
                 />
-                <div className="text-md text-gray-600 font-medium">
+                <div className="text-base text-gray-600 font-medium">
                   {item.authors.map(author => author.name).join(' & ')}
                 </div>
                 </div>
@@ -276,7 +276,7 @@ function Highlights() {
               <div className="flex gap-2">
               <button
                 onClick={() => window.open(item.links.blog, '_blank')}
-                className="flex-1 flex items-center justify-center gap-2 px-3 py-2 text-white text-bold bg-deepblue hover:bg-white hover:text-deepblue hover:border hover:border-deepblue duration-700">
+                className="flex-1 flex items-center justify-center gap-2 px-3 py-2 text-white font-bold bg-deepblue hover:bg-white hover:text-deepblue hover:border hover:border-deepblue duration-700">
                 View Details
                 <ExternalLink className="w-3 h-3" />
               </button>

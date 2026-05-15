@@ -14,12 +14,12 @@ function ZK() {
               Previous ZK Cohorts
             </p>
             <Link href="/zBlock1">
-              <p className="text-md font-semibold leading-8 text-deepblue hover:underline duration-700">
+              <p className="text-base font-semibold leading-8 text-deepblue hover:underline duration-700">
                 zBlock1 (May 2023) ↗
               </p>
             </Link>
             <Link href="/zBlock2">
-              <p className="text-md font-semibold leading-8 text-deepblue hover:underline duration-700">
+              <p className="text-base font-semibold leading-8 text-deepblue hover:underline duration-700">
                 zBlock2 (Jan - May 2024) ↗
               </p>
             </Link>
@@ -27,7 +27,7 @@ function ZK() {
             <p className="text-sm font-semibold leading-6 text-deepblue"></p>
           </div>
           <div>
-            <h2 className="text-semibold text-xl mb-4">Highlights</h2>
+            <h2 className="font-semibold text-xl mb-4">Highlights</h2>
 
             <ul className="list-disc list-inside">
               <li>
@@ -77,8 +77,8 @@ function ZK() {
             received a confirmation email (otherwise you may have used an
             incorrect email)
           </p>
-          <a href="https://tally.so/r/mRdG89" target="_blank">
-            <button className="w-1/2 px-8 py-3 text-md text-white text-bold bg-deepblue hover:bg-white hover:text-deepblue hover:border hover:border-deepblue duration-700">
+          <a href="https://tally.so/r/mRdG89" target="_blank" rel="noopener noreferrer">
+            <button className="w-1/2 px-8 py-3 text-base text-white font-bold bg-deepblue hover:bg-white hover:text-deepblue hover:border hover:border-deepblue duration-700">
               Apply
             </button>
           </a>
@@ -109,7 +109,7 @@ function ZK() {
             ensure engagement and participation from all fellows.
           </p>
           <div>
-            <h2 className="text-semibold text-xl mb-4">Pre-requisites</h2>
+            <h2 className="font-semibold text-xl mb-4">Pre-requisites</h2>
 
             <ul className="list-disc list-inside text-zinc-500">
               <li>

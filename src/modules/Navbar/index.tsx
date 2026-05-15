@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+ 
 
 import { CloseCircleOutlined, MenuOutlined } from "@ant-design/icons";
 import Link from "next/link";
@@ -32,13 +32,13 @@ export function Navbar({ menuOpen, setMenuOpen }: Props) {
         <MenuOutlined />
       </button>
       <div className="flex flex-row items-center sm:hidden md:hidden lg:mr-[18vw]">
-        <a href="https://reports.yaudit.dev/">
+        <a href="https://reports.yaudit.dev/" target="_blank" rel="noopener noreferrer">
           <Button text={"Reports"} />
         </a>
-        <a href="https://blog.yaudit.dev/">
+        <a href="https://blog.yaudit.dev/" target="_blank" rel="noopener noreferrer">
           <Button text={"Blog"} />
         </a>
-        <a href="https://research.yaudit.dev/">
+        <a href="https://research.yaudit.dev/" target="_blank" rel="noopener noreferrer">
           <Button text={"Research"} />
         </a>
         <Link href={"/fellowships"}>
@@ -54,7 +54,7 @@ export function Navbar({ menuOpen, setMenuOpen }: Props) {
           <Button text={"zBlock2"} />
         </Link> */}
         <Link href={"/contact-us"}>
-          <button className="px-8 py-3 text-md text-white text-bold bg-deepblue hover:bg-white hover:text-deepblue hover:border hover:border-deepblue duration-700">
+            <button className="px-8 py-3 text-base text-white font-bold bg-deepblue hover:bg-white hover:text-deepblue hover:border hover:border-deepblue duration-700">
             Contact
           </button>
         </Link>
@@ -72,7 +72,6 @@ export function MobileNavbar({ setMenuOpen }: MobileProps) {
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
-        true &&
         inputRef.current &&
         !inputRef.current.contains(event.target as Node)
       ) {
@@ -96,17 +95,17 @@ export function MobileNavbar({ setMenuOpen }: MobileProps) {
           <CloseCircleOutlined style={{ fontSize: "2rem" }} />
         </button>
 
-        <a href="https://reports.yaudit.dev/">
+        <a href="https://reports.yaudit.dev/" target="_blank" rel="noopener noreferrer">
           <button className="p-6 w-full text-xl text-zinc-400 hover:text-deepblue hover:bg-deepblue hover:bg-opacity-5 duration-700">
             Reports
           </button>
         </a>
-        <a href="https://blog.yaudit.dev/">
+        <a href="https://blog.yaudit.dev/" target="_blank" rel="noopener noreferrer">
           <button className="p-6 w-full text-xl text-zinc-400 hover:text-deepblue hover:bg-deepblue hover:bg-opacity-5 duration-700">
             Blog
           </button>
         </a>
-        <a href="https://research.yaudit.dev/">
+        <a href="https://research.yaudit.dev/" target="_blank" rel="noopener noreferrer">
           <button className="p-6 w-full text-xl text-zinc-400 hover:text-deepblue hover:bg-deepblue hover:bg-opacity-5 duration-700">
             Research
           </button>

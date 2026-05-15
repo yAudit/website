@@ -22,7 +22,7 @@ function HeroSection() {
           </h2>
           <div className="flex flex-row sm:flex-col gap-4 items-center justify-start sm:justify-center">
             <Link href={"/contact-us"}>
-              <button className="px-16 py-3 text-md text-white text-bold bg-deepblue hover:bg-white hover:text-deepblue hover:border hover:border-deepblue duration-700">
+              <button className="px-16 py-3 text-base text-white font-bold bg-deepblue hover:bg-white hover:text-deepblue hover:border hover:border-deepblue duration-700">
                 Get an Audit
               </button>
             </Link>

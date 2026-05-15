@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+ 
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import Image from "next/image";
 

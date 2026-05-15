@@ -10,7 +10,7 @@ function SmartContracts() {
       <div className="grid grid-cols-2 sm:flex sm:flex-col gap-16 my-4">
         <div className="col-span-1 flex flex-col gap-8">
           <div>
-            <h2 className="text-semibold text-xl my-4">
+            <h2 className="font-semibold text-xl my-4">
               A typical week in the fellowship program
             </h2>
 
@@ -80,8 +80,8 @@ function SmartContracts() {
             </button>
             .
           </p>
-          <a href="https://tally.so/r/nG9o6e" target="_blank">
-            <button className="w-1/2 px-8 py-3 text-md text-white text-bold bg-deepblue hover:bg-white hover:text-deepblue hover:border hover:border-deepblue duration-700">
+          <a href="https://tally.so/r/nG9o6e" target="_blank" rel="noopener noreferrer">
+            <button className="w-1/2 px-8 py-3 text-base text-white font-bold bg-deepblue hover:bg-white hover:text-deepblue hover:border hover:border-deepblue duration-700">
               Apply
             </button>
           </a>

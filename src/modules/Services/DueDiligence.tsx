@@ -5,10 +5,10 @@ export default function DueDiligence() {
   return (
     <>
       <div className="lg:grid md:grid sm:flex grid-cols-2 gap-16 sm:flex-col my-16 justify-between text-left">
-        <div className="lg:cols-span-1 md:cols-span-1">
+        <div className="lg:col-span-1 md:col-span-1">
           <img alt="Consulting" src="/dd.png" className="h-[26rem] justify-self-center object-cover" />
         </div>
-        <div className="lg:cols-span-1 md:cols-span-1 flex flex-col">
+        <div className="lg:col-span-1 md:col-span-1 flex flex-col">
           <h2 className="lg:text-4xl text-3xl font-bold">
             Consulting
           </h2>
@@ -23,7 +23,7 @@ export default function DueDiligence() {
             Whether you're building a new ZK proof system, designing a novel consensus mechanism, or integrating complex cryptographic primitives, our consultants bring the expertise to validate your approach. We work closely with your team to ensure security is built in from the ground up, not bolted on as an afterthought.
           </p>
           <Link href={"/contact-us"}>
-            <button className="px-8 py-3 sm:w-full text-md text-white text-bold bg-deepblue hover:bg-white hover:text-deepblue hover:border hover:border-deepblue duration-700">
+            <button className="px-8 py-3 sm:w-full text-base text-white font-bold bg-deepblue hover:bg-white hover:text-deepblue hover:border hover:border-deepblue duration-700">
               Enquire
             </button>
           </Link>
