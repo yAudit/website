@@ -33,23 +33,7 @@ const features = [
       </>
     ),
   },
-  {
-    name: "Guest Auditor Program",
-    description:
-      "field experts leading audits and mentoring fellows alongside our team",
-    href: "/fellowships#guest-auditor",
-    cta: "Apply",
-    className: "",
-    background: (
-      <>
-        <img
-          alt=""
-          src="/ga.jpeg"
-          className="h-[12rem] mx-auto transition-all ease-out hover:blur-none duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)] group-hover:scale-105"
-        />
-      </>
-    ),
-  },
+
 ];
 
 export default function Fellowships() {

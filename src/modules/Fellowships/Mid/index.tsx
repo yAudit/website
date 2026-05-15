@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import SmartContracts from "../SC";
 import ZK from "../ZK";
-import GuestAuditor from "../GA";
 
 const tabs = [
   {
@@ -14,11 +13,6 @@ const tabs = [
     href: "#zero-knowledge",
     current: false,
   },
-  { 
-    name: "Guest Auditor Program", 
-    href: "#guest-auditor", 
-    current: true 
-  },
 ];
 
 const getTabFromHash = (hash: string) => {
@@ -27,8 +21,6 @@ const getTabFromHash = (hash: string) => {
       return "Smart Contract Fellowship";
     case '#zero-knowledge':
       return "Zero Knowledge Fellowship";
-    case '#guest-auditor':
-      return "Guest Auditor Program";
     default:
       return "Smart Contract Fellowship";
   }
@@ -91,7 +83,7 @@ export default function Summary() {
       <h2 className="text-3xl font-bold text-center mb-8">Choose your hard</h2>
       <div className="sm:block">
         <div className="border border-deepblue">
-          <nav className="-mb-px grid grid-cols-3" aria-label="Tabs">
+          <nav className="-mb-px grid grid-cols-2" aria-label="Tabs">
             {tabs.map((tab) => (
               <a 
                 key={tab.name} 
@@ -123,9 +115,7 @@ export default function Summary() {
         <div id="zero-knowledge">
           {currentTab === "Zero Knowledge Fellowship" && <ZK />}
         </div>
-        <div id="guest-auditor">
-          {currentTab === "Guest Auditor Program" && <GuestAuditor />}
-        </div>
+
       </div>
       <div className="my-16 flex flex-row gap-4 p-8 items-center border border-deepblue">
         <img alt="" src="./icons/bulb.svg" className="h-16" />
