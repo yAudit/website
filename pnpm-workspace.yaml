@@ -1,2 +1,31 @@
 minimumReleaseAge: 7
 blockExoticSubdeps: true
+# Matches minimumReleaseAge above: versions under 7 days old still get full
+# trust-downgrade enforcement, but older versions whose provenance metadata
+# doesn't retroactively match (a common false positive, not evidence of
+# compromise) no longer block every install/upgrade.
+trustPolicyIgnoreAfter: 10080
+# These entries pre-date this project adopting pnpm 11's trustPolicy check
+# (previously on pnpm 10.23.0, see commit c8c4792). All flagged versions were
+# individually verified: their tarball integrity hash matches the current
+# registry exactly (no tampering), and no compromise reports were found for
+# any of these packages/maintainers. The flag is a first-adoption artifact
+# (older versions predate provenance/trusted-publisher metadata that newer
+# releases of the same packages have).
+#
+# tailwind-merge@2.6.1 specifically: can't upgrade to v3 without also
+# migrating to Tailwind CSS v4 first (v3 dropped Tailwind v3 support).
+trustPolicyExclude:
+  - "tailwind-merge@2.6.1"
+  - "undici-types@6.21.0"
+  - "chokidar@4.0.3"
+  - "semver@6.3.1"
+  - "eslint-import-resolver-typescript@3.10.1"
+  - "@netlify/serverless-functions-api@1.41.2"
+  - "@netlify/serverless-functions-api@2.15.1"
+  - "@netlify/zip-it-and-ship-it@12.2.1"
+allowBuilds:
+  esbuild: set this to true or false
+  msw: set this to true or false
+  sharp: set this to true or false
+  unrs-resolver: set this to true or false
