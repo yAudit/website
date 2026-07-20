@@ -7,6 +7,7 @@ import Core from "../../modules/Members/1-Core";
 import {
   SmartContractResident,
   ResidentAlumni,
+  AlumniCore,
   ZKResident,
 } from "../../modules/Members/2-Residents";
 import {
@@ -37,7 +38,8 @@ export default function MembersPage() {
         <ZKResident />
         <Core />
         <ResidentAlumni />
-        <h1 
+        <AlumniCore />
+        <h1
           className="text-4xl mb-8 sm:text-center group relative cursor-pointer" 
           id="fellows"
           onClick={() => {
