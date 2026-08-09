@@ -1,4 +1,4 @@
-import { SiGoogleslides } from "react-icons/si";
+import { Presentation } from "lucide-react";
 import Image from "next/image";
 
 export const VideoSection = ({
@@ -36,7 +36,7 @@ export const VideoSection = ({
                 rel="noopener noreferrer"
                 className="flex items-center text-deepblue"
               >
-                <SiGoogleslides className="mr-1" />
+                <Presentation className="mr-1 h-[2rem]" />
               </a>
             )}
           </div>

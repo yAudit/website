@@ -1,6 +1,6 @@
  
 
-import { CloseCircleOutlined, MenuOutlined } from "@ant-design/icons";
+import { X, Menu } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 
@@ -29,7 +29,7 @@ export function Navbar({ menuOpen, setMenuOpen }: Props) {
         className="px-8 py-3 lg:hidden"
         onClick={() => setMenuOpen(!menuOpen)}
       >
-        <MenuOutlined />
+        <Menu />
       </button>
       <div className="flex flex-row items-center sm:hidden md:hidden lg:mr-[18vw]">
         <a href="https://reports.yaudit.dev/" target="_blank" rel="noopener noreferrer">
@@ -92,7 +92,7 @@ export function MobileNavbar({ setMenuOpen }: MobileProps) {
           }}
           className="text-deepblue"
         >
-          <CloseCircleOutlined style={{ fontSize: "2rem" }} />
+          <X style={{ fontSize: "2rem" }} size={32} />
         </button>
 
         <a href="https://reports.yaudit.dev/" target="_blank" rel="noopener noreferrer">
