@@ -22,7 +22,6 @@
     "next": "16.2.11",
     "react": "19.2.6",
     "react-dom": "19.2.6",
-    "styled-components": "5.3.11",
     "tailwind-merge": "2.6.1",
     "tailwindcss-animate": "1.0.7",
     "telegraf": "4.16.3"
@@ -33,7 +32,6 @@
     "@types/node": "20.19.41",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "@types/styled-components": "5.1.36",
     "autoprefixer": "10.5.0",
     "concurrently": "9.2.1",
     "eslint": "9.39.4",

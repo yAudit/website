@@ -1,19 +1,19 @@
-"use client";
-
-import { useState } from "react";
-import { Navbar, MobileNavbar } from "@/modules/Navbar";
+import type { Metadata } from "next";
+import Header from "@/modules/Navbar/Header";
 import ContactUs from "@/modules/Contact";
 import Footer from "@/modules/Footer";
 
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description:
+    "Contact yAudit to request a smart contract or zero-knowledge security audit for your protocol.",
+  alternates: { canonical: "https://yaudit.dev/contact-us" },
+};
+
 export default function ContactPage() {
-  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="flex flex-col bg-white text-black w-full font-default">
-      {menuOpen ? (
-        <MobileNavbar setMenuOpen={setMenuOpen} />
-      ) : (
-        <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      )}
+      <Header />
       <ContactUs />
       <Footer />
     </div>

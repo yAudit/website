@@ -1,3 +1,5 @@
+"use client";
+
 import { core } from "../Data/core";
 import Image from "next/image";
 

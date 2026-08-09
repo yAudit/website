@@ -1,3 +1,5 @@
+"use client";
+
  
 
 import { X, Menu } from "lucide-react";

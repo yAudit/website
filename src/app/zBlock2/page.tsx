@@ -1,20 +1,19 @@
-"use client";
-
-import { useState } from "react";
-import { Navbar, MobileNavbar } from "@/modules/Navbar";
-import React from "react";
-import ZBlock2Modules from "@/modules/Zblock2/zBlock2";
+import type { Metadata } from "next";
+import Header from "@/modules/Navbar/Header";
 import Footer from "@/modules/Footer";
+import ZBlock2Modules from "@/modules/Zblock2/zBlock2";
+
+export const metadata: Metadata = {
+  title: "zBlock 2",
+  description:
+    "Lectures, exercises, and reports from zBlock 2, the second block of yAudit's zero-knowledge fellowship program.",
+  alternates: { canonical: "https://yaudit.dev/zBlock2" },
+};
 
 export default function ZblockPage() {
-  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="flex flex-col bg-white text-black w-full font-default">
-      {menuOpen ? (
-        <MobileNavbar setMenuOpen={setMenuOpen} />
-      ) : (
-        <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      )}
+      <Header />
       <div className="lg:mx-[20vw] mx-6">
         <ZBlock2Modules />
       </div>

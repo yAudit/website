@@ -1,12 +1,5 @@
-import styled from "styled-components";
 import Link from "next/link";
 import Image from "next/image";
-
-export const GradientWord = styled.span`
-  background: linear-gradient(360deg, #0055FF -16.67%, #0088FF 100%);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-`;
 
 function HeroSection() {
   return (

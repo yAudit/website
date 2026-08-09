@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
 import { Shield, Award, Users, Zap, CheckCircle, ArrowRight, ExternalLink, Calendar, DollarSign, AlertTriangle, Star, Target, Microscope, Brain } from 'lucide-react';
 

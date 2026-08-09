@@ -1,3 +1,5 @@
+"use client";
+
 import { zblock1 } from "../Data/zblock1";
 import { zblock2 } from "../Data/zblock2";
 import { block1 } from "../Data/block1";

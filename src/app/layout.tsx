@@ -19,7 +19,7 @@ export default function RootLayout({
       <head>
         <GoogleAnalytics />
       </head>
-      <body className={""}>
+      <body>
         <RebrandingBanner />
         {children}
       </body>
@@ -29,7 +29,10 @@ export default function RootLayout({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://yaudit.dev"),
-  title: "yAudit - ZK & Smart Contract Security Auditing",
+  title: {
+    default: "yAudit - ZK & Smart Contract Security Auditing",
+    template: "%s | yAudit",
+  },
   description:
     "yAudit is focused on smart contracts and zero-knowledge security: auditing, research, and increasingly tooling. We launched to help make DeFi more secure and have since then secured contracts holding billions in TVL.",
   applicationName: "yAudit",

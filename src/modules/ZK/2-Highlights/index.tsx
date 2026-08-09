@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useRef, useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight, ExternalLink, Github, Calendar, Users, Award, Shield } from 'lucide-react';
 import AvatarCircles from "@/components/ui/avatar-circles";

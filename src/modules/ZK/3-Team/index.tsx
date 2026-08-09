@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
 import { Github, ExternalLink, Star, Award, Shield, ChevronRight, X } from 'lucide-react';
 

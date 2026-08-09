@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import SmartContracts from "../SC";
 import ZK from "../ZK";

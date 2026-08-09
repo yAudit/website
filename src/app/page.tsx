@@ -1,7 +1,4 @@
-"use client";
-
-import { useState } from "react";
-import { Navbar, MobileNavbar } from "@/modules/Navbar";
+import Header from "@/modules/Navbar/Header";
 import HeroSection from "@/modules/Home/1-Hero-Section";
 import Footer from "@/modules/Footer";
 import Partners from "@/modules/Home/2-Clients";
@@ -12,17 +9,12 @@ import Research from "@/modules/Home/5-Research";
 import { AuditStats } from "@/modules/Home/7-Stats";
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="flex flex-col bg-white text-black w-full font-default">
-      {menuOpen ? (
-        <MobileNavbar setMenuOpen={setMenuOpen} />
-      ) : (
-        <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-      )}
+      <Header />
 
       <HeroSection />
-      
+
       <AuditStats />
       <Partners />
       <Feedback />
