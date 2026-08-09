@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import axios from "axios";
 
 export default function ContactUs() {
   const [isDisabled, setIsDisabled] = useState(false);
@@ -37,9 +36,13 @@ export default function ContactUs() {
         ).value,
       };
 
-      axios
-        .post("/api/telegram", formData)
-        .then((): void => {
+      fetch("/api/telegram", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+        .then((res): void => {
+          if (!res.ok) throw new Error(`Request failed: ${res.status}`);
           setResponse(
             "Thank you for your message. We will get back to you as soon as possible!"
           );
