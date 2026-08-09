@@ -67,9 +67,9 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any", type: "image/x-icon" },
-      { url: "/icon.png", sizes: "1334x1334", type: "image/png" },
+      { url: "/icon.png", sizes: "512x512", type: "image/png" },
     ],
-    apple: { url: "/icon.png", sizes: "1334x1334", type: "image/png" },
+    apple: { url: "/icon.png", sizes: "512x512", type: "image/png" },
     shortcut: "/favicon.ico",
   },
   openGraph: {
@@ -82,16 +82,16 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/twitter.png",
-        width: 2348,
-        height: 1384,
+        url: "/twitter.jpg",
+        width: 1200,
+        height: 707,
         alt: "yAudit - ZK & Smart Contract Security",
-        type: "image/png",
+        type: "image/jpeg",
       },
       {
         url: "/icon.png",
-        width: 1334,
-        height: 1334,
+        width: 512,
+        height: 512,
         alt: "yAudit Logo",
         type: "image/png",
       },
@@ -105,7 +105,7 @@ export const metadata: Metadata = {
     description:
       "yAudit is focused on smart contracts and zero-knowledge security: auditing, research, and increasingly tooling. We launched to help make DeFi more secure and have since then secured contracts holding billions in TVL.",
     images: {
-      url: "/twitter.png",
+      url: "/twitter.jpg",
       alt: "yAudit - ZK & Smart Contract Security",
     },
   },

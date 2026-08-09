@@ -64,7 +64,7 @@ export const About = () => {
         </div>
         <div className="lg:col-span-1 sm:hidden md:hidden">
           <img
-            src="/team.jpeg"
+            src="/team.webp"
             alt="Team"
             className="h-[26rem] mx-auto mt-6"
           />

@@ -13,7 +13,7 @@ const features = [
       <>
         <img
           alt=""
-          src="/fellowship.png"
+          src="/fellowship.webp"
           className="h-[10rem] mx-auto transition-all ease-out hover:blur-none duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)] group-hover:scale-105"
         />{" "}
       </>
@@ -30,7 +30,7 @@ const features = [
       <>
         <img
           alt=""
-          src="/team.jpeg"
+          src="/team.webp"
           className="h-[12rem] mx-auto transition-all  ease-out hover:blur-none duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_10%,#000_100%)] group-hover:scale-105"
         />
       </>
@@ -47,7 +47,7 @@ const features = [
       <>
         <img
           alt=""
-          src="/dd.png"
+          src="/dd.webp"
           className="h-[12rem] mx-auto transition-all ease-out hover:blur-none duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)] group-hover:scale-105"
         />
       </>

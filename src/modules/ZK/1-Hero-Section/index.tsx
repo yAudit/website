@@ -202,7 +202,7 @@ export default function HeroSection() {
           <div className="mb-8">
             <img
               alt="ZK Security Hero Illustration"
-              src="/dd.png"
+              src="/dd.webp"
               className="w-full h-auto max-h-[24rem] object-contain"
             />
           </div>

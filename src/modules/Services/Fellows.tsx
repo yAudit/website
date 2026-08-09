@@ -8,7 +8,7 @@ export default function Fellows() {
         <div className="lg:col-span-1 md:col-span-1 ">
           <img
             alt="Boosted Audits"
-            src="/team.jpeg"
+            src="/team.webp"
             className="lg:h-[26rem] md:h-[16rem] justify-self-center object-cover"
           />
         </div>

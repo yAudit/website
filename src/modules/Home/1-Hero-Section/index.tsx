@@ -34,7 +34,7 @@ function HeroSection() {
           </div>
         </div>
         <div className="col-span-2 my-20 sm:hidden md:hidden">
-          <Image src="/hero.png" alt="Hero" width={600} height={400} className="w-full h-auto" />
+          <Image src="/hero.webp" alt="Hero" width={600} height={400} className="w-full h-auto" />
         </div>
       </div>
     </div>

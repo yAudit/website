@@ -136,7 +136,7 @@ function FeaturedResearchHighlight() {
       <div className="relative h-[20rem] overflow-hidden">
         
         <img 
-          src="/mpc.png" 
+          src="/mpc.webp" 
           alt="Multi Party Computation Research" 
           className="w-full h-full object-cover opacity-85"
         />

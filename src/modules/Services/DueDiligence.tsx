@@ -6,7 +6,7 @@ export default function DueDiligence() {
     <>
       <div className="lg:grid md:grid sm:flex grid-cols-2 gap-16 sm:flex-col my-16 justify-between text-left">
         <div className="lg:col-span-1 md:col-span-1">
-          <img alt="Consulting" src="/dd.png" className="h-[26rem] justify-self-center object-cover" />
+          <img alt="Consulting" src="/dd.webp" className="h-[26rem] justify-self-center object-cover" />
         </div>
         <div className="lg:col-span-1 md:col-span-1 flex flex-col">
           <h2 className="lg:text-4xl text-3xl font-bold">

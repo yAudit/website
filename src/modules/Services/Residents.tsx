@@ -7,7 +7,7 @@ export default function Residents() {
       <div className="lg:grid md:grid sm:flex grid-cols-2 gap-16 sm:flex-col my-16 justify-between text-left">
         <img
           alt="ZK & Smart Contract Expertise"
-          src="/fellowship.png"
+          src="/fellowship.webp"
           className="lg:col-span-1 md:col-span-1 justify-self-center lg:h-[24rem] md:h-[10rem] object-cover"
         />
         <div className="lg:col-span-1 md:col-span-1 flex flex-col">
