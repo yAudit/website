@@ -1,0 +1,30 @@
+# yAudit
+
+> yAudit is a smart contract and zero-knowledge security firm offering audits, research, and tooling. Founded in 2021, yAudit has secured contracts holding billions in TVL and identified over 500 critical vulnerabilities.
+
+yAudit specializes in securing DeFi protocols, ZK-powered networks, and cryptographic implementations. Core services include smart contract security audits, zero-knowledge (ZK) circuit audits, boosted audits, consulting, and training through fellowship programs. The team's expertise spans Solidity, Circom, Halo2, zkSTARKs, zkSNARKs, and related cryptographic primitives.
+
+In 2024, yAudit expanded into ZK security research, supported by a grant from the Ethereum Foundation. The firm has run multiple zero-knowledge auditing fellowship cohorts in collaboration with the Privacy & Scaling Explorations (PSE) group at the Ethereum Foundation.
+
+## Main pages
+
+- [Home](https://yaudit.dev): Overview of yAudit services, clients, and track record
+- [Services](https://yaudit.dev/services): Smart contract and ZK security audits, boosted audits, consulting, research, and training
+- [ZK Security](https://yaudit.dev/zk): Zero-knowledge security services, research highlights, and team
+- [Team](https://yaudit.dev/team): Core members, resident auditors, fellows, and alumni
+- [Fellowships](https://yaudit.dev/fellowships): Smart contract and ZK security fellowship programs with hands-on audit experience
+- [Contact Us](https://yaudit.dev/contact-us): Request a smart contract or ZK security audit
+
+## Fellowship cohorts
+
+- [zBlock 1](https://yaudit.dev/zBlock1): First zero-knowledge auditing fellowship (June 2023) — Circom, RLN, Spartan ECDSA
+- [zBlock 2](https://yaudit.dev/zBlock2): Second zero-knowledge auditing fellowship (Jan–May 2024) — PSE-Halo2, KZG, Summa Protocol
+
+## External resources
+
+- [Audit Reports](https://reports.yaudit.dev): Public security audit reports
+- [Blog](https://blog.yaudit.dev): Technical blog posts and security research
+- [Research](https://research.yaudit.dev): In-depth research papers including MPC and ZK topics
+- [GitHub](https://www.github.com/electisec): Open-source tools and fellowship exercises
+- [YouTube](https://www.youtube.com/@electisec): Fellowship lectures and guest talks
+- [X / Twitter](https://www.x.com/yAuditDAO): Announcements and updates

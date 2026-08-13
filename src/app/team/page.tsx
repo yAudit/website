@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Header from "@/modules/Navbar/Header";
 import Footer from "../../modules/Footer";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/structured-data";
 import Core from "../../modules/Members/1-Core";
 import {
   SmartContractResident,
@@ -32,6 +34,7 @@ export default function MembersPage() {
   return (
     <div className="flex flex-col bg-white text-black w-full font-default">
       <Header />
+      <JsonLd data={breadcrumbJsonLd([{ name: "Home", path: "" }, { name: "Team", path: "/team" }])} />
       <div className="lg:mx-[20vw] mx-6 h-full relative">
         <About />
         <SmartContractResident />
@@ -39,7 +42,7 @@ export default function MembersPage() {
         <Core />
         <ResidentAlumni />
         <AlumniCore />
-        <h1
+        <h2
           className="text-4xl mb-8 sm:text-center group relative"
           id="fellows"
         >
@@ -52,7 +55,7 @@ export default function MembersPage() {
               </svg>
             </span>
           </a>
-        </h1>
+        </h2>
         <ZBlock2 />
         <ZBlock1 />
         <Block7 />

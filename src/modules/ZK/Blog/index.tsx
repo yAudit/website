@@ -154,12 +154,12 @@ function FeaturedResearchHighlight() {
       {/* Content Section */}
       <div className="p-8 text-center">
         {/* Main Content */}
-        <h1 className="text-xl lg:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+        <h2 className="text-xl lg:text-3xl font-bold text-gray-900 mb-4 leading-tight">
           MPC Research on  {' '}
           <span className="text-deepblue">
             Vole, Quicksilver
           </span>
-        </h1>
+        </h2>
 
         {/* CTA Section */}
         <div className="grid grid-cols-1 w-full">

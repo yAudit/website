@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Header from "@/modules/Navbar/Header";
 import ContactUs from "@/modules/Contact";
 import Footer from "@/modules/Footer";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -13,6 +15,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="flex flex-col bg-white text-black w-full font-default">
+      <JsonLd data={breadcrumbJsonLd([{ name: "Home", path: "" }, { name: "Contact Us", path: "/contact-us" }])} />
       <Header />
       <ContactUs />
       <Footer />

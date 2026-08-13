@@ -5,9 +5,9 @@ import Image from "next/image";
 function SmartContracts() {
   return (
     <div>
-      <h1 className="lg:text-4xl md:text-3xl sm:text-3xl font-bold mb-4">
+      <h2 className="lg:text-4xl md:text-3xl sm:text-3xl font-bold mb-4">
         Smart Contract Fellowship
-      </h1>
+      </h2>
 
       <div className="grid grid-cols-2 sm:flex sm:flex-col gap-16 my-4">
         <div className="col-span-1 flex flex-col gap-8">

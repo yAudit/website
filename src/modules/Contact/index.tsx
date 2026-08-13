@@ -65,7 +65,7 @@ export default function ContactUs() {
       <div className="max-w-5xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Contact</h2>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Contact</h1>
           <p className="text-xl text-gray-600">
             Request an audit or ask a question. We dont just read code, we read
             your messages too.

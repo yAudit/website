@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Header from "@/modules/Navbar/Header";
 import Footer from "@/modules/Footer";
 import ZBlock1Modules from "@/modules/Zblock1/zBlock1";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "zBlock 1",
@@ -14,6 +16,7 @@ export default function ZblockPage() {
   return (
     <div className="flex flex-col bg-white text-black w-full font-default">
       <Header />
+      <JsonLd data={breadcrumbJsonLd([{ name: "Home", path: "" }, { name: "Fellowships", path: "/fellowships" }, { name: "zBlock 1", path: "/zBlock1" }])} />
       <div className="lg:mx-[20vw] mx-6">
         <ZBlock1Modules />
       </div>

@@ -3,6 +3,8 @@ import Header from "@/modules/Navbar/Header";
 import Stats from "@/modules/Fellowships/Stats";
 import Footer from "@/modules/Footer";
 import Summary from "@/modules/Fellowships/Mid";
+import { JsonLd } from "@/components/JsonLd";
+import { breadcrumbJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "Fellowships",
@@ -15,6 +17,7 @@ export default function FellowshipsPage() {
   return (
     <div className="flex flex-col bg-white text-black w-full font-default">
       <Header />
+      <JsonLd data={breadcrumbJsonLd([{ name: "Home", path: "" }, { name: "Fellowships", path: "/fellowships" }])} />
       <div className="lg:mx-[20vw] mx-6 h-full relative">
         <Stats />
         <Summary />

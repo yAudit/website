@@ -1,9 +1,9 @@
 export const About = () => {
   return (
     <div className="bg-white text-lg my-16">
-      <h2 className="lg:text-4xl text-3xl font-bold">
+      <h1 className="lg:text-4xl text-3xl font-bold">
         About the Team
-      </h2>
+      </h1>
       <div className="grid lg:grid-cols-2 sm:grid-cols-1 gap-8 text-zinc-700  mt-8">
         <div className="col-span-1 text-base">
           <p className="">

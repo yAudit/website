@@ -92,12 +92,12 @@ function ZBlock2Modules() {
             </p>
           </div>
         </div>
-        <h1
+        <h2
           className="text-4xl  font-bold text-center mt-20 mb-20"
           id="participants"
         >
           Participants
-        </h1>
+        </h2>
         <div className="grid lg:grid-cols-5 gap-8">
           <div className="lg:col-span-1 flex flex-col py-6 bg-zinc-50 border border-zinc-100">
             <img alt="" src="/logo.svg" className="h-8 mb-6" />
@@ -206,26 +206,26 @@ function ZBlock2Modules() {
           <img alt="" src="/zblock/ef.svg" className="h-16 inline-block" />
         </div>
 
-        <h1 className="text-4xl font-bold text-center mt-20" id="module-1">
+        <h2 className="text-4xl font-bold text-center mt-20" id="module-1">
           Module 1
-        </h1>
+        </h2>
         <div className="grid grid-cols-2 sm:grid-cols-1 gap-12 mt-12">
           <div className="col-span-1">
-            <h1 id="session1" className="text-2xl font-bold">
+            <h3 id="session1" className="text-2xl font-bold">
               Sessions
-            </h1>
+            </h3>
             <VideoSection videoData={m1video} />
-            <h1 className="text-2xl font-bold">Guest Lectures</h1>
+            <h3 className="text-2xl font-bold">Guest Lectures</h3>
             <VideoSection videoData={m1guestLectures} />
           </div>
           <div className="col-span-1">
-            <h1 id="discussion1" className="text-2xl font-bold mb-4">
+            <h3 id="discussion1" className="text-2xl font-bold mb-4">
               Discussion
-            </h1>
+            </h3>
             <div className="flex flex-row gap-4 p-4 items-center bg-zinc-50 border border-zinc-100">
               <Discussion chat={m1discussion} />
             </div>
-            <h1 className="text-2xl font-bold my-4">Supplementary Materials</h1>
+            <h3 className="text-2xl font-bold my-4">Supplementary Materials</h3>
             <div className="flex flex-col gap-6 p-4 items-start bg-zinc-50 border border-zinc-100">
               {m1notes.map((exercise) => {
                 return <Notes notes={exercise} key={exercise.link} />;
@@ -237,27 +237,27 @@ function ZBlock2Modules() {
             {/* <div className="flex flex-col gap-6 p-4 items-start bg-zinc-50 border border-zinc-100">
               
             </div> */}
-            <h1 className="text-2xl font-bold my-4">Exercises</h1>
+            <h3 className="text-2xl font-bold my-4">Exercises</h3>
             <div className="flex flex-col gap-6 p-4 items-start bg-zinc-50 border border-zinc-100">
               {m1exercises.map((exercise) => {
                 return <Quiz quiz={exercise} key={exercise.link} />;
               })}
             </div>
-            <h1 className="text-2xl font-bold my-4">Audit Reports</h1>
+            <h3 className="text-2xl font-bold my-4">Audit Reports</h3>
             <div className="flex flex-row gap-4 p-4 items-center bg-zinc-50 border border-zinc-100">
               <Report report={m1report} />
             </div>
           </div>
         </div>
 
-        <h1 className="text-4xl font-bold text-center mt-20" id="module-2">
+        <h2 className="text-4xl font-bold text-center mt-20" id="module-2">
           Module 2
-        </h1>
+        </h2>
         <div className="grid grid-cols-2 sm:grid-cols-1 gap-12 mt-12 mb-8">
           <div className="col-span-1">
-            <h1 className="text-2xl font-bold">Sessions</h1>
+            <h3 className="text-2xl font-bold">Sessions</h3>
             <VideoSection videoData={m2video} />
-            <h1 className="text-2xl font-bold my-4">Supplementary Materials</h1>
+            <h3 className="text-2xl font-bold my-4">Supplementary Materials</h3>
             <div className="flex flex-col gap-6 p-4 items-start bg-zinc-50 border border-zinc-100">
               {m2notes.map((exercise) => {
                 return <Notes notes={exercise} key={exercise.link} />;
@@ -266,16 +266,16 @@ function ZBlock2Modules() {
             </div>
           </div>
           <div className="col-span-1">
-            <h1 className="text-2xl font-bold">Guest Lectures</h1>
+            <h3 className="text-2xl font-bold">Guest Lectures</h3>
             <VideoSection videoData={m2guestLectures} />
-            <h1 id="discussion1" className="text-2xl font-bold mb-4">
+            <h3 id="discussion1" className="text-2xl font-bold mb-4">
               Discussion
-            </h1>
+            </h3>
             <div className="flex flex-row gap-4 p-4 items-center bg-zinc-50 border border-zinc-100">
               <Discussion chat={m2discussion} />
             </div>
 
-            <h1 className="text-2xl font-bold my-4">Audit Reports</h1>
+            <h3 className="text-2xl font-bold my-4">Audit Reports</h3>
             <div className="flex flex-row gap-4 p-4 items-center bg-zinc-50 border border-zinc-100">
               <Report report={m2report} />
             </div>

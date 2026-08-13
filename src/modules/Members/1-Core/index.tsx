@@ -24,7 +24,7 @@ export function Template({
   
   return (
     <div className="my-24" id={slug}>
-      <h1 className="text-4xl mb-12 sm:text-center group relative cursor-pointer" onClick={handleLinkClick}>
+      <h2 className="text-4xl mb-12 sm:text-center group relative cursor-pointer" onClick={handleLinkClick}>
         {title}
         <span className="inline-block ml-2 opacity-0 group-hover:opacity-100 transition-opacity">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -32,7 +32,7 @@ export function Template({
             <path d="m14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </span>
-      </h1>
+      </h2>
       <ul
         role="list"
         className="grid lg:grid-cols-3 grid-cols-2 lg:gap-x-72 md:gap-x-32 gap-y-12"

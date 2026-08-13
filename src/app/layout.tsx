@@ -3,6 +3,12 @@ import "./globals.css";
 import { Space_Grotesk } from "next/font/google";
 import GoogleAnalytics from "@/app/gtag";
 import RebrandingBanner from "@/components/RebrandingBanner";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  organizationJsonLd,
+  professionalServiceJsonLd,
+  faqJsonLd,
+} from "@/lib/structured-data";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -18,6 +24,9 @@ export default function RootLayout({
     <html lang="en" className={spaceGrotesk.className}>
       <head>
         <GoogleAnalytics />
+        <JsonLd data={organizationJsonLd} />
+        <JsonLd data={professionalServiceJsonLd} />
+        <JsonLd data={faqJsonLd} />
       </head>
       <body>
         <RebrandingBanner />
