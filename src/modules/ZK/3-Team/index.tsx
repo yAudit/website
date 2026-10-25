@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { Github, ExternalLink, Star, Award, Shield, ChevronRight, X } from 'lucide-react';
+import { ExternalLink, Star, Award, Shield, ChevronRight, X } from 'lucide-react';
+import { GithubIcon } from '@/components/ui/github-icon';
 
 const teamMembers = [
   {
@@ -402,7 +403,7 @@ function DreamTeamSection() {
                       rel="noopener noreferrer"
                       className="hover:opacity-75 transition-opacity"
                     >
-                      <Github className="w-5 h-5 sm:w-4 sm:h-4 text-gray-700" />
+                      <GithubIcon className="w-5 h-5 sm:w-4 sm:h-4 text-gray-700" />
                     </a>
                     <a
                       href={teamMembers[selectedMember].social.x}

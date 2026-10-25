@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useRef, useEffect, useState } from 'react';
-import { ChevronLeft, ChevronRight, ExternalLink, Github, Calendar, Users, Award, Shield } from 'lucide-react';
+import { ChevronLeft, ChevronRight, ExternalLink, Calendar, Users, Award, Shield } from 'lucide-react';
+import { GithubIcon } from '@/components/ui/github-icon';
 import AvatarCircles from "@/components/ui/avatar-circles";
 
 const workItems = [
@@ -285,7 +286,7 @@ function Highlights() {
               <button
                 onClick={() => window.open(item.links.github, '_blank')}
                 className="flex items-center justify-center p-2 border border-gray-300 text-gray-600 hover:bg-gray-50 transition-colors">
-                <Github className="w-4 h-4" />
+                <GithubIcon className="w-4 h-4" />
               </button>
               </div>
             </div>
