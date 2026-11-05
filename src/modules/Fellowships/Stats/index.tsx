@@ -9,7 +9,7 @@ function Stats() {
         </h1>
         <p className="text-zinc-500 mt-8">
           Our fellowships are a public good aiming to onboard top security
-          talent to the Ethereum ecosystem. <br /><br /> Many of our alumni fellows from 8
+          talent to the Ethereum ecosystem. <br /><br /> Many of our alumni fellows from 9
           previous fellowships now occupying prominent positions in top projects
           and protocols, topping bounty and contest leaderboards, or leading a
           successful solo auditing careers.
@@ -63,7 +63,7 @@ function Stats() {
         <img alt="" src="./illustrations/stats-pie.svg" className="lg:h-[40rem] md:h-[28rem]" />
         <p className="text-zinc-400 italic text-center lg:px-16">
           Audits conducted within our fellowship programs get a boost from extra
-          eyes of our amazing fellows, uncovering hundreds of bugs in 8
+          eyes of our amazing fellows, uncovering hundreds of bugs in 9
           fellowships since 2021
         </p>
       </div>
