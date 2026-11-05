@@ -19,11 +19,6 @@ function HeroSection() {
                 Get an Audit
               </button>
             </Link>
-            <a href="https://quoteplz.com" target="_blank" rel="noopener noreferrer">
-              <button className="px-8 py-3 text-deepblue font-bold border-2 border-deepblue hover:bg-deepblue hover:bg-opacity-5 transition-all duration-300">
-                Get instant Quote
-              </button>
-            </a>
           </div>
         </div>
         <div className="col-span-2 my-20 sm:hidden md:hidden">
