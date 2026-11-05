@@ -82,11 +82,13 @@ function SmartContracts() {
             </button>
             .
           </p>
-          <a href="https://tally.so/r/nG9o6e" target="_blank" rel="noopener noreferrer">
-            <button className="w-1/2 px-8 py-3 text-base text-white font-bold bg-deepblue hover:bg-white hover:text-deepblue hover:border hover:border-deepblue duration-700">
-              Apply
-            </button>
-          </a>
+          {/* Applications closed. Form: https://tally.so/r/nG9o6e */}
+          <button
+            disabled
+            className="w-1/2 px-8 py-3 text-base text-white font-bold bg-deepblue opacity-50 cursor-not-allowed"
+          >
+            Apply
+          </button>
         </div>
       </div>
     </div>
