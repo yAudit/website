@@ -114,10 +114,7 @@ function Resources() {
         if (weekSessions.length === 0) return null;
         return (
           <div key={week.number} className="mt-16 first-of-type:mt-0">
-            <h3 className="text-xl font-semibold">
-              <span className="font-mono text-deepblue mr-3">W{week.number}</span>
-              {week.theme}
-            </h3>
+            <h3 className="text-xl font-semibold">Week {week.number}</h3>
             <p className="font-mono text-xs text-zinc-400 mt-1">
               {weekRange(week)}
             </p>

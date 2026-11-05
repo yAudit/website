@@ -3,7 +3,6 @@ const VIDEOS = "https://m7qpbjeg3szyizge.public.blob.vercel-storage.com/videos";
 
 export type Week = {
   number: number;
-  theme: string;
   starts: string;
 };
 
@@ -20,14 +19,10 @@ export type Session = {
 };
 
 export const weeks: Week[] = [
-  { number: 1, theme: "Learn, explore, build", starts: "2026-09-28" },
-  { number: 2, theme: "Iterate on your tool; Audit #1", starts: "2026-10-05" },
-  {
-    number: 3,
-    theme: "Group bug bounty hunt; begin Audit #2",
-    starts: "2026-10-12",
-  },
-  { number: 4, theme: "Continue and finish Audit #2", starts: "2026-10-19" },
+  { number: 1, starts: "2026-09-28" },
+  { number: 2, starts: "2026-10-05" },
+  { number: 3, starts: "2026-10-12" },
+  { number: 4, starts: "2026-10-19" },
 ];
 
 export const sessions: Session[] = [
