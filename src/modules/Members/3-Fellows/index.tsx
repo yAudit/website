@@ -122,14 +122,7 @@ export function Template({
           <li key={person.name}>
             <div className="flex flex-row sm:flex-col items-center gap-x-6">
               <img
-                className={
-                  "rounded-full items-center" +
-                  ` ${
-                    person.promotedToResident
-                      ? `h-[4.75rem] w-11 sm:h-8 sm:w-9 sm:mb-2 `
-                      : `h-11 w-11 ml-1 sm:h-9 sm:w-9 sm:mb-2`
-                  }`
-                }
+                className="h-11 w-11 ml-1 sm:h-9 sm:w-9 sm:mb-2 rounded-full object-cover shrink-0"
                 src={
                   person.avatar || person.url?.includes("github")
                     ? person.avatar ||
