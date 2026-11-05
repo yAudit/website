@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services",
     "/team",
     "/fellowships",
+    "/yborg",
     "/zk",
     "/zBlock1",
     "/zBlock2",
