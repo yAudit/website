@@ -95,6 +95,7 @@ export const sessions: Session[] = [
     day: 2,
     title: "Session with 0xfirefist",
     speakers: ["0xfirefist"],
+    affiliation: "Pashov Audit Group",
     summary:
       "Reading a protocol from its architecture diagram first, then looping agents over it and choosing the right model for each step.",
     recording: {
