@@ -47,6 +47,7 @@ function NavLink({
       target="_blank"
       rel="noopener noreferrer"
       className={className}
+      onClick={onClick}
     >
       {item.label}
     </a>
@@ -97,7 +98,7 @@ export function Navbar({ menuOpen, setMenuOpen }: Props) {
 
           <Link
             href={"/contact-us"}
-            className="inline-flex items-center border border-deepblue bg-deepblue px-8 py-3 text-sm font-semibold text-white transition duration-700 hover:bg-white hover:text-deepblue"
+            className="inline-flex items-center border border-deepblue bg-deepblue px-8 py-3 text-sm font-semibold text-white transition duration-700 hover:bg-white hover:text-deepblue lg:ml-3"
           >
             Contact
           </Link>
@@ -105,6 +106,7 @@ export function Navbar({ menuOpen, setMenuOpen }: Props) {
           <button
             className="ml-2 px-3 py-3 lg:hidden"
             aria-label="Open menu"
+            aria-expanded={menuOpen}
             onClick={() => setMenuOpen(!menuOpen)}
           >
             <Menu />
@@ -121,25 +123,52 @@ interface MobileProps {
 
 export function MobileNavbar({ setMenuOpen }: MobileProps) {
   const activeItem = useActiveItem();
-  const inputRef = useRef<HTMLInputElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        inputRef.current &&
-        !inputRef.current.contains(event.target as Node)
-      ) {
+    const previousFocus = document.activeElement as HTMLElement | null;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    closeRef.current?.focus();
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
         setMenuOpen(false);
+      } else if (event.key === "Tab") {
+        const focusable = menuRef.current?.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled])'
+        );
+        if (!focusable?.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
       }
     }
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleKeyDown);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = previousOverflow;
+      previousFocus?.focus();
     };
-  }, [inputRef, setMenuOpen]);
+  }, [setMenuOpen]);
   return (
-    <div className="w-full h-full z-40 duration-700" ref={inputRef}>
+    <div
+      ref={menuRef}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Navigation menu"
+      className="fixed inset-0 z-50 overflow-y-auto overscroll-contain bg-white"
+    >
       <div className="pt-8 mx-auto flex flex-col p-8 gap-2">
         <button
+          ref={closeRef}
+          aria-label="Close menu"
           onClick={() => {
             setMenuOpen(false);
           }}
