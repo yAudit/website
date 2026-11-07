@@ -3,11 +3,10 @@
  
 
 import React from "react";
-import { CalendarIcon, MailIcon, PencilIcon, BookCopyIcon } from "lucide-react";
+import { CalendarIcon, MailIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import {
   Tooltip,
   TooltipContent,
@@ -75,19 +74,11 @@ export const Icons = {
 };
 
 const DATA = {
-  navbar: [
-    {
-      href: "https://reports.yaudit.dev",
-      icon: BookCopyIcon,
-      label: "Reports",
-    },
-    { href: "https://blog.yaudit.dev", icon: PencilIcon, label: "Blog" },
-  ],
   contact: {
     social: {
       GitHub: {
         name: "GitHub",
-        url: "https://www.github.com/electisec",
+        url: "https://github.com/yAudit",
         icon: Icons.github,
       },
       X: {
@@ -97,7 +88,7 @@ const DATA = {
       },
       youtube: {
         name: "YouTube",
-        url: "https://www.youtube.com/@electisec",
+        url: "https://www.youtube.com/@yAudit",
         icon: Icons.youtube,
       },
       email: {
@@ -114,29 +105,6 @@ export function DockDemo() {
     <div className="relative flex flex-col items-center justify-center">
       <TooltipProvider>
         <Dock direction="middle">
-          {DATA.navbar.map((item) => (
-            <DockIcon key={item.label}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <a
-                    href={item.href}
-                    target="_blank"
-                    aria-label={item.label}
-                    className={cn(
-                      buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-14"
-                    )}
-                  >
-                    <item.icon className="size-4" />
-                  </a>
-                </TooltipTrigger>
-                <TooltipContent>
-                  <p>{item.label}</p>
-                </TooltipContent>
-              </Tooltip>
-            </DockIcon>
-          ))}
-          <Separator orientation="vertical" className="h-full" />
           {Object.entries(DATA.contact.social).map(([name, social]) => (
             <DockIcon key={name}>
               <Tooltip>
