@@ -46,6 +46,9 @@ export function Navbar({ menuOpen, setMenuOpen }: Props) {
         <Link href={"/fellowships"}>
           <Button text={"Fellowships"} />
         </Link>
+        <Link href={"/yborg"}>
+          <Button text={"yBorg"} />
+        </Link>
         <Link href={"/services"}>
           <Button text={"Services"} />
         </Link>
@@ -121,6 +124,16 @@ export function MobileNavbar({ setMenuOpen }: MobileProps) {
             className="p-6 w-full text-xl text-zinc-400 hover:text-deepblue hover:bg-deepblue hover:bg-opacity-5 duration-700"
           >
             Fellowships
+          </button>
+        </Link>
+        <Link href={"/yborg"}>
+          <button
+            onClick={() => {
+              setMenuOpen(false);
+            }}
+            className="p-6 w-full text-xl text-zinc-400 hover:text-deepblue hover:bg-deepblue hover:bg-opacity-5 duration-700"
+          >
+            yBorg
           </button>
         </Link>
         <Link href={"/services"}>
