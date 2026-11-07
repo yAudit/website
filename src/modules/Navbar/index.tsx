@@ -20,6 +20,7 @@ type NavEntry = NavItem | NavGroup;
 
 const NAV: NavEntry[] = [
   { label: "Services", href: "/services" },
+  { label: "yAgent", href: "/yagent" },
   {
     label: "Programs",
     items: [
