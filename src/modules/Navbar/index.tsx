@@ -20,6 +20,7 @@ type NavEntry = NavItem | NavGroup;
 
 const NAV: NavEntry[] = [
   { label: "Services", href: "/services" },
+  { label: "yAgent", href: "/yagent" },
   {
     label: "Programs",
     items: [
@@ -111,7 +112,7 @@ function NavDropdown({
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
         setOpen(false);
-        buttonRef.current?.focus();
+        buttonRef.current?.focus({ preventScroll: true });
       }
     }
     document.addEventListener("pointerdown", handlePointerDown);
@@ -283,7 +284,8 @@ export function MobileNavbar({ setMenuOpen }: MobileProps) {
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = previousOverflow;
-      previousFocus?.focus();
+      // Returning focus to the sticky header must not scroll the page.
+      previousFocus?.focus({ preventScroll: true });
     };
   }, [setMenuOpen]);
 
