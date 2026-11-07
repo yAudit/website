@@ -65,6 +65,12 @@
   }
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
+  }
+  /* Anchor targets land below the sticky navbar. This is a scroll-margin on
+     the targets, not a scroll-padding on html: with a sticky header,
+     scroll-padding makes the browser scroll the page whenever something in
+     the header gets focus. */
+  [id] {
+    scroll-margin-top: 5rem;
   }
 }
