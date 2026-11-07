@@ -123,6 +123,7 @@ export const sessions: Session[] = [
     day: 2,
     title: "Thinking like an attacker",
     speakers: ["Dravee"],
+    affiliation: "Independent SR",
     summary:
       "A tour of the attacker's search space: how to bound it, which invariants to enforce, where the money goes, and where to hunt for highs and crits.",
     recording: {
