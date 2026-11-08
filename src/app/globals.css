@@ -63,8 +63,11 @@
   body {
     @apply bg-background text-foreground;
   }
+  /* Always reserve the scrollbar's space, so the navbar sits in the same place
+     on short pages without a scrollbar as on every other page and site. */
   html {
     scroll-behavior: smooth;
+    scrollbar-gutter: stable;
   }
   /* Anchor targets land below the sticky navbar. This is a scroll-margin on
      the targets, not a scroll-padding on html: with a sticky header,
