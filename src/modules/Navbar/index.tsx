@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, ChevronDown, X, Menu } from "lucide-react";
+import { ChevronDown, X, Menu } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
@@ -67,20 +67,11 @@ function NavLink({
   className: string;
   onClick?: () => void;
 }) {
+  // Reports, Blog and Research are yAudit's own sites: they open in the same
+  // tab, like the rest of the menu.
   return item.external ? (
-    <a
-      href={item.href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={className}
-      onClick={onClick}
-    >
+    <a href={item.href} className={className} onClick={onClick}>
       {item.label}
-      <ArrowUpRight
-        aria-hidden="true"
-        className="ml-1 inline h-[0.9em] w-[0.9em] align-[-0.1em]"
-      />
-      <span className="sr-only"> (opens in a new tab)</span>
     </a>
   ) : (
     <Link href={item.href} className={className} onClick={onClick}>
