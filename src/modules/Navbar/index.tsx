@@ -314,30 +314,15 @@ export function MobileNavbar({ setMenuOpen }: MobileProps) {
           <X style={{ fontSize: "2rem" }} size={32} />
         </button>
 
-        {NAV.map((entry) =>
-          isGroup(entry) ? (
-            <div key={entry.label} role="group" aria-label={entry.label}>
-              <p className="pt-4 pb-1 text-center text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500">
-                {entry.label}
-              </p>
-              {entry.items.map((item) => (
-                <NavLink
-                  key={item.label}
-                  item={item}
-                  onClick={() => setMenuOpen(false)}
-                  className={linkClass(item)}
-                />
-              ))}
-            </div>
-          ) : (
-            <NavLink
-              key={entry.label}
-              item={entry}
-              onClick={() => setMenuOpen(false)}
-              className={linkClass(entry)}
-            />
-          )
-        )}
+        {/* On phones the groups are flattened into one plain list. */}
+        {NAV_ITEMS.map((item) => (
+          <NavLink
+            key={item.label}
+            item={item}
+            onClick={() => setMenuOpen(false)}
+            className={linkClass(item)}
+          />
+        ))}
 
         <Link href={"/contact-us"}>
           <button
