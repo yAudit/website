@@ -95,6 +95,7 @@ export const sessions: Session[] = [
     day: 2,
     title: "Session with 0xfirefist",
     speakers: ["0xfirefist"],
+    affiliation: "Pashov Audit Group",
     summary:
       "Reading a protocol from its architecture diagram first, then looping agents over it and choosing the right model for each step.",
     recording: {
@@ -122,6 +123,7 @@ export const sessions: Session[] = [
     day: 2,
     title: "Thinking like an attacker",
     speakers: ["Dravee"],
+    affiliation: "Independent SR",
     summary:
       "A tour of the attacker's search space: how to bound it, which invariants to enforce, where the money goes, and where to hunt for highs and crits.",
     recording: {

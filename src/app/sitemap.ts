@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/team",
     "/fellowships",
     "/yborg",
+    "/yagent",
     "/zk",
     "/zBlock1",
     "/zBlock2",

@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, ChevronDown, X, Menu } from "lucide-react";
+import { ChevronDown, X, Menu } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
@@ -20,6 +20,7 @@ type NavEntry = NavItem | NavGroup;
 
 const NAV: NavEntry[] = [
   { label: "Services", href: "/services" },
+  { label: "yAgent", href: "/yagent" },
   {
     label: "Programs",
     items: [
@@ -66,20 +67,11 @@ function NavLink({
   className: string;
   onClick?: () => void;
 }) {
+  // Reports, Blog and Research are yAudit's own sites: they open in the same
+  // tab, like the rest of the menu.
   return item.external ? (
-    <a
-      href={item.href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={className}
-      onClick={onClick}
-    >
+    <a href={item.href} className={className} onClick={onClick}>
       {item.label}
-      <ArrowUpRight
-        aria-hidden="true"
-        className="ml-1 inline h-[0.9em] w-[0.9em] align-[-0.1em]"
-      />
-      <span className="sr-only"> (opens in a new tab)</span>
     </a>
   ) : (
     <Link href={item.href} className={className} onClick={onClick}>
@@ -111,7 +103,7 @@ function NavDropdown({
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
         setOpen(false);
-        buttonRef.current?.focus();
+        buttonRef.current?.focus({ preventScroll: true });
       }
     }
     document.addEventListener("pointerdown", handlePointerDown);
@@ -283,7 +275,8 @@ export function MobileNavbar({ setMenuOpen }: MobileProps) {
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = previousOverflow;
-      previousFocus?.focus();
+      // Returning focus to the sticky header must not scroll the page.
+      previousFocus?.focus({ preventScroll: true });
     };
   }, [setMenuOpen]);
 
@@ -312,30 +305,15 @@ export function MobileNavbar({ setMenuOpen }: MobileProps) {
           <X style={{ fontSize: "2rem" }} size={32} />
         </button>
 
-        {NAV.map((entry) =>
-          isGroup(entry) ? (
-            <div key={entry.label} role="group" aria-label={entry.label}>
-              <p className="pt-4 pb-1 text-center text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500">
-                {entry.label}
-              </p>
-              {entry.items.map((item) => (
-                <NavLink
-                  key={item.label}
-                  item={item}
-                  onClick={() => setMenuOpen(false)}
-                  className={linkClass(item)}
-                />
-              ))}
-            </div>
-          ) : (
-            <NavLink
-              key={entry.label}
-              item={entry}
-              onClick={() => setMenuOpen(false)}
-              className={linkClass(entry)}
-            />
-          )
-        )}
+        {/* On phones the groups are flattened into one plain list. */}
+        {NAV_ITEMS.map((item) => (
+          <NavLink
+            key={item.label}
+            item={item}
+            onClick={() => setMenuOpen(false)}
+            className={linkClass(item)}
+          />
+        ))}
 
         <Link href={"/contact-us"}>
           <button
