@@ -9,7 +9,7 @@ import { breadcrumbJsonLd } from "@/lib/structured-data";
 export const metadata: Metadata = {
   title: "yAgent",
   description:
-    "yAgent is yAudit's AI security agent, a harness built on top of Zero Cool. Its agents map a codebase, hunt for exploitable bugs and prove each one, and the yAudit team verifies every lead.",
+    "yAgent is yAudit's AI security agent, a powerful AI auditor built on top of Zero Cool. Its agents map a codebase, hunt for exploitable bugs and prove each one, and the yAudit team takes every lead further.",
   alternates: { canonical: "https://yaudit.dev/yagent" },
 };
 

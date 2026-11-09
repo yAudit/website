@@ -12,8 +12,8 @@ const STEPS = [
     text: "Each lead comes with a working proof of concept, so it arrives with evidence rather than a guess.",
   },
   {
-    title: "Triage",
-    text: "The yAudit team reviews every lead, drops false positives and duplicates, confirms the impact and sets the severity.",
+    title: "Report",
+    text: "The yAudit team takes each lead further: confirms it, looks for higher-impact ways it can affect the system and combines it with what they've found by hand.",
   },
 ];
 

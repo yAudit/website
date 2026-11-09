@@ -8,8 +8,8 @@ function Intro() {
 
         <div className="flex flex-col gap-4 mt-8 text-zinc-500">
           <p>
-            yAgent is yAudit&apos;s AI security agent. It is a harness we built
-            on top of{" "}
+            yAgent is yAudit&apos;s AI security agent: a powerful AI auditor
+            built on top of{" "}
             <a
               href="https://zerocool.ai/"
               target="_blank"
@@ -18,19 +18,20 @@ function Intro() {
             >
               Zero Cool
             </a>
-            : it points Zero Cool&apos;s agents at a codebase, collects what
-            they find and hands every lead to the yAudit team.
+            . It points Zero Cool&apos;s agents at a codebase and brings
+            everything they find to the yAudit team.
           </p>
           <p>
             Zero Cool is a human + AI offensive security platform, built by
-            researchers from Trail of Bits, Spearbit, Certora and Offbeat
-            Security. Its agents map the whole system, search it for
+            security researchers for security researchers. Its agents map the whole system, search it for
             exploitable bugs, including the ones that hide between components,
             and back each bug with a working proof of concept.
           </p>
           <p>
-            yAgent keeps a human in the loop. The agents do the searching, and
-            our team decides which leads are real issues.
+            yAgent is one part of a human + AI loop. The agents surface leads
+            and ideas, and our auditors verify them and use them to dig deeper
+            and find more. Their new ideas go back to yAgent, and the loop
+            continues.
           </p>
         </div>
       </div>
