@@ -33,7 +33,22 @@ const features = [
       </>
     ),
   },
-
+  {
+    name: "yBorg",
+    description: "4 weeks building AI security tooling, then using it on real targets",
+    href: "/yborg",
+    cta: "Learn more",
+    className: "",
+    background: (
+      <>
+        <img
+          alt=""
+          src="./illustrations/yborg.svg"
+          className="h-[12rem] mx-auto transition-all ease-out hover:blur-none duration-300 ease-out [mask-image:linear-gradient(to_top,transparent_5%,#000_100%)] group-hover:scale-105"
+        />
+      </>
+    ),
+  },
 ];
 
 export default function Fellowships() {
