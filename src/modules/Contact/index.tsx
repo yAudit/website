@@ -114,7 +114,9 @@ export default function ContactUs() {
 
   return (
     <div className="mx-6 my-16 lg:mx-[20vw]">
-      <h1 className="lg:text-5xl text-4xl font-bold">Contact</h1>
+      <h1 className="md:leading-normal sm:leading-normal lg:leading-tight lg:text-5xl md:text-3xl sm:text-3xl font-bold">
+        Contact
+      </h1>
       <p className="mt-4 text-xl text-zinc-500">
         Request an audit or ask a question. We don&apos;t just read code, we read your
         messages too.

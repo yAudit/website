@@ -31,11 +31,12 @@ import Image from "next/image";
 function ZBlock2Modules() {
   return (
     <>
-      <div className="mt-24">
+      <div className="mt-16">
         <div className="grid lg:grid-cols-5 gap-8">
           {/* Side by side (lg), the logos sit right of the text, centred
-              against it instead of being pushed down by a fixed margin. */}
-          <div className="lg:col-span-2 lg:order-2 mt-28 lg:mt-0 lg:self-center">
+              against it. On narrower screens they come after the text, so the
+              title starts at the top as on the other pages. */}
+          <div className="order-last lg:order-2 lg:col-span-2 mt-8 lg:mt-0 lg:self-center">
             <img alt="" src="/zblock/pse-summa-yac.svg" className="h-[24rem] " />
           </div>
           <div className="lg:col-span-3">
