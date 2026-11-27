@@ -24,18 +24,14 @@ export default function Residents() {
           <p className="text-zinc-500 mb-4">
             We conduct comprehensive code reviews covering architecture analysis, protocol design, and smart contract logic. Our audits include detailed reports with severity classifications, proof-of-concept exploits, and remediation recommendations.
           </p>
-          <p className="text-zinc-500 mb-8">
+          {/* No button here: each audit option below has its own. */}
+          <p className="text-zinc-500">
             Whether you&apos;re building a DeFi protocol, a wallet, or onchain infrastructure, our auditors provide the expertise needed to identify vulnerabilities before deployment. Building with zero-knowledge proofs? See our{" "}
             <Link href="/zk" className="text-deepblue font-bold hover:underline">
               ZK audits
             </Link>
             .
           </p>
-          <Link href={"/contact-us"}>
-            <button className="px-8 py-3 sm:w-full text-base text-white font-bold bg-deepblue hover:bg-white hover:text-deepblue hover:border hover:border-deepblue duration-700">
-              Start your Audit
-            </button>
-          </Link>
         </div>
       </div>
     </>
