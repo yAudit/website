@@ -196,7 +196,7 @@ export default function ResearchSection() {
   return (
     <div className="bg-zinc-50 border border-zinc-100">
       <div className="lg:my-12 p-12 lg:px-64">
-        <div className="grid sm:grid-cols-1 grid-cols-2 gap-12 items-start">
+        <div className="grid sm:grid-cols-1 grid-cols-2 gap-12 items-center">
           {/* Left Side - Featured Research Highlight */}
           <div>
             <FeaturedResearchHighlight />

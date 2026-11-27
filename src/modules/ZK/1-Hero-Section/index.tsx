@@ -172,18 +172,13 @@ export default function HeroSection() {
             </h2>
           </div>
           
-          {/* Enhanced CTA Buttons */}
+          {/* CTA, worded like the Services pages */}
           <div className="flex flex-row sm:flex-col gap-4 items-center justify-start sm:justify-center mb-8">
             <Link href="/contact-us">
               <button className="px-8 py-4 text-base text-white font-bold bg-deepblue hover:bg-white hover:text-deepblue hover:border hover:border-deepblue duration-700 hover:-translate-y-1 transition-transform">
-                Get a Boosted Audit
+                Start your Audit
               </button>
             </Link>
-            <a href="https://research.yaudit.dev" target="_blank" rel="noopener noreferrer">
-              <button className="px-8 py-4 text-deepblue font-bold border-2 border-deepblue hover:bg-deepblue hover:bg-opacity-5 transition-all duration-300">
-                View Research
-              </button>
-            </a>
           </div>
           
           {/* Trust Indicators */}

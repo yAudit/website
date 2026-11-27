@@ -1,5 +1,4 @@
  
-import Link from "next/link";
 import { m1video, m1exercises, m1notes, m1discussion } from "../Data/zblock1";
 import {
   m2discussion,
@@ -14,6 +13,7 @@ import {
   m3guestLectures,
 } from "../Data/zblock1";
 import { electiteam, fellows, pseteam, guest } from "../Data/zblock1";
+import ZBlockParticipants from "@/components/ZBlockParticipants";
 import { Discussion, VideoSection, Report, Notes } from "../utils";
 import Image from "next/image";
 
@@ -21,7 +21,9 @@ function ZBlock1Modules() {
   return (
     <>
       <div className="grid lg:grid-cols-5 gap-8 lg:mt-24">
-        <div className="lg:col-span-2 mt-28">
+        {/* Side by side (lg), the logos sit right of the text, centred against
+            it instead of being pushed down by a fixed margin. */}
+        <div className="lg:col-span-2 lg:order-2 mt-28 lg:mt-0 lg:self-center">
           <img
             alt=""
             src="/zblock/pse-personae-yac.svg"
@@ -30,9 +32,9 @@ function ZBlock1Modules() {
         </div>
         <div className="lg:col-span-3">
           <h1 className="md:leading-normal sm:leading-normal lg:leading-tight lg:text-5xl md:text-3xl sm:text-3xl font-bold lg:mb-10">
-            zBlock1
+            zBlock 1
           </h1>
-          <p className="text-gray-600 text-justify">
+          <p className="text-gray-600">
             In June 2023, we conducted a Zero Knowledge Auditing cohort that
             kicked off with foundational concepts in complexity theory and Zero
             Knowledge Proofs (ZKPs). Participants engaged in hands-on exercises
@@ -76,14 +78,6 @@ function ZBlock1Modules() {
             of the audit, outstanding fellows were awarded for their exceptional
             contributions and performance throughout the cohort.
           </p>
-          <p className="mt-4 font-semibold">
-            See also :{" "}
-            <Link href={"/zBlock2"}>
-              <button className="text-deepblue hover:underline duration-700">
-                zBlock2
-              </button>
-            </Link>
-          </p>
         </div>
       </div>
       <h2 className="text-4xl font-bold text-center mt-40 mb-20"
@@ -91,109 +85,14 @@ function ZBlock1Modules() {
       >
         Participants
       </h2>
-      <div className="grid lg:grid-cols-5 gap-8">
-        <div className="lg:col-span-1 flex flex-col py-6 bg-zinc-50 border border-zinc-100">
-          <img alt="" src="/logo.svg" className="h-8 mb-6" />
-          <ul className="list-disc text-zinc-700 px-12">
-            {electiteam.map((member) => {
-              return (
-                <li key={member.name}>
-                  <a
-                    href={member.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className=" hover:underline duration-700"
-                  >
-                    {member.name}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-        <div className="lg:col-span-2 flex flex-col p-4 px-12 bg-zinc-50 border border-zinc-100">
-          <h4 className="text-xl py-4 text-center font-semibold mb-4">
-            Fellows
-          </h4>
-          <div className="flex flex-row sm:flex-col justify-between">
-            <ul className="list-disc text-zinc-700">
-              {fellows.slice(0, 7).map((member) => {
-                return (
-                  <li key={member.name}>
-                    <a
-                      href={member.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:underline duration-700"
-                    >
-                      {member.name}
-                      {member.isResident ? "*" : ""}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-            <ul className="list-disc text-zinc-700">
-              {fellows.slice(7, 14).map((member) => {
-                return (
-                  <li key={member.name}>
-                    <a
-                      href={member.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:underline duration-700"
-                    >
-                      {member.name}
-                      {member.isResident ? "*" : ""}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-          <p className="text-center p-4 text-zinc-700"> * Top Fellows</p>
-        </div>
-        <div className="lg:col-span-1 flex flex-col p-6 bg-zinc-50 border border-zinc-100">
-          <img alt="" src="/zblock/pse-0xparc.svg" className="h-14 mx-4 mb-6" />
-          <ul className="list-disc text-zinc-700 px-8">
-            {pseteam.map((member) => {
-              return (
-                <li key={member.name}>
-                  <a
-                    href={member.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className=" hover:underline duration-700"
-                  >
-                    {member.name}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-        <div className="lg:col-span-1 flex flex-col p-4 px-8 bg-zinc-50 border border-zinc-100">
-          <h4 className="text-xl py-4 text-center font-semibold">
-            Guest Speakers
-          </h4>
-          <ul className="list-disc text-zinc-700">
-            {guest.map((member) => {
-              return (
-                <li key={member.name}>
-                  <a
-                    href={member.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className=" hover:underline duration-700"
-                  >
-                    {member.name}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </div>
+      <ZBlockParticipants
+        groups={[
+          { title: "yAudit", logo: "/logo.svg", members: electiteam },
+          { title: "PSE and 0xPARC", logo: "/zblock/pse-0xparc.svg", members: pseteam },
+          { title: "Guest Speakers", members: guest },
+        ]}
+        fellows={fellows}
+      />
       <h2 className="text-4xl font-bold text-center mt-20" id="module-1">
         Module 1
       </h2>

@@ -29,13 +29,15 @@ export const professionalServiceJsonLd = {
   url: BASE_URL,
   logo: `${BASE_URL}/icon.png`,
   description:
-    "Smart contract and zero-knowledge security audits, boosted audits, consulting, research, and training.",
+    "Smart contract and zero-knowledge security audits, boosted audits, research, and training.",
   areaServed: "Worldwide",
   serviceType: [
     "Smart Contract Security Audit",
     "Zero-Knowledge Security Audit",
+    "Focused Security Audit",
+    "AI Security Review",
+    "Code Update Review",
     "Boosted Audit",
-    "Security Consulting",
     "Security Research",
     "Security Training",
   ],
@@ -54,7 +56,7 @@ export const faqJsonLd = {
       name: "What services does yAudit offer?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "yAudit offers smart contract security audits, zero-knowledge (ZK) security audits, boosted audits conducted during fellowship cohorts, security consulting, security research, and training programs.",
+        text: "yAudit offers smart contract security audits in four options: Full Audit, Focused Audit, yAgent Review and Update Review. It also offers zero-knowledge (ZK) security audits, boosted audits conducted during fellowship cohorts, security research, and training programs.",
       },
     },
     {

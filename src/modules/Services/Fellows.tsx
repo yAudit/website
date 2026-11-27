@@ -5,11 +5,14 @@ export default function Fellows() {
   return (
     <>
       <div className="lg:grid md:grid sm:flex grid-cols-2 gap-16 sm:flex-col my-16 justify-between">
-        <div className="lg:col-span-1 md:col-span-1 ">
+        {/* From 768px up the image sits right of the text; phones skip it, so
+            the page starts with the text. It keeps its own proportions: a
+            fixed height with object-cover cut off its sides. */}
+        <div className="sm:hidden lg:col-span-1 md:col-span-1 md:order-2 lg:order-2 self-center">
           <img
             alt="Boosted Audits"
             src="/team.webp"
-            className="lg:h-[26rem] md:h-[16rem] justify-self-center object-cover"
+            className="w-full h-auto"
           />
         </div>
         <div className="lg:col-span-1 md:col-span-1 flex flex-col">

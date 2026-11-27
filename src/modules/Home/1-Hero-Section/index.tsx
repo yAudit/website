@@ -10,8 +10,8 @@ function HeroSection() {
             <span className="text-deepblue">Smart <br />  Contract</span> <br /> 
             <span className="text-deepblue">& ZK </span> Security
             </h1>
-          <h2 className="text-left sm:text-center my-4 text-zinc-500">
-            Audits - Research - Training - Consulting
+          <h2 className="text-xl text-left sm:text-center my-4 text-zinc-500">
+            Audits - Research - Training
           </h2>
           <div className="flex flex-row sm:flex-col gap-4 items-center justify-start sm:justify-center">
             <Link href={"/contact-us"}>
