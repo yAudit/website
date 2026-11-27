@@ -19,6 +19,14 @@
   status = 200
   force = true
 
+# Services became separate pages (Smart Contract Audits, ZK Audits, Boosted
+# Audits): old links to /services land on Smart Contract Audits. It must come
+# before the catch-all below.
+[[redirects]]
+  from = "/services"
+  to = "/services/smart-contract-audits"
+  status = 301
+
 [[redirects]]
   from = "/*"
   to = "/index.html"

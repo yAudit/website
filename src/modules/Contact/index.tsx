@@ -1,6 +1,42 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { ChevronDown } from "lucide-react";
+
+// The services a request can be about. The Services pages link here with
+// ?service=<value>, so the request arrives tagged with the option the visitor
+// picked; they can still change it.
+const SERVICES = [
+  { value: "full-audit", label: "Full Audit" },
+  { value: "focused-audit", label: "Focused Audit" },
+  { value: "yagent-review", label: "yAgent Review" },
+  { value: "update-review", label: "Update Review" },
+  { value: "zk-audit", label: "ZK Audit" },
+  { value: "boosted-audit", label: "Boosted Audit" },
+  { value: "not-sure", label: "Not sure yet" },
+];
+
+// The site has no forms plugin, so the fields get their border here.
+const fieldClass =
+  "block w-full border border-zinc-300 bg-white px-3 text-zinc-950 outline-none transition-colors placeholder:text-zinc-400 focus:border-deepblue";
+const inputClass = `mt-2 h-12 ${fieldClass}`;
+
+// The site defines sm, md and lg as ranges (tailwind.config.ts): a class
+// that applies from 768px up needs both "md:" and "lg:".
+const fullWidthClass = "md:col-span-2 lg:col-span-2";
+
+function Label({ htmlFor, required, children }: {
+  htmlFor: string;
+  required?: boolean;
+  children: React.ReactNode;
+}) {
+  return (
+    <label htmlFor={htmlFor} className="block text-sm font-semibold text-zinc-700">
+      {children}
+      {required && <span className="text-deepblue">*</span>}
+    </label>
+  );
+}
 
 export default function ContactUs() {
   const [isDisabled, setIsDisabled] = useState(false);
@@ -10,6 +46,16 @@ export default function ContactUs() {
     message: string;
   } | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
+  const serviceRef = useRef<HTMLSelectElement>(null);
+
+  // Preselect the service named in the URL. The page is exported as static
+  // HTML, so the URL is only known in the browser.
+  useEffect(() => {
+    const service = new URLSearchParams(window.location.search).get("service");
+    if (serviceRef.current && SERVICES.some((option) => option.value === service)) {
+      serviceRef.current.value = service as string;
+    }
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -23,6 +69,10 @@ export default function ContactUs() {
     const formData = {
       name: (form.elements.namedItem("name") as HTMLInputElement).value,
       tguser: (form.elements.namedItem("tguser") as HTMLInputElement).value,
+      service:
+        SERVICES.find(
+          (option) => option.value === (form.elements.namedItem("service") as HTMLSelectElement).value
+        )?.label ?? "",
       protocol: (form.elements.namedItem("protocol") as HTMLInputElement).value,
       website: (form.elements.namedItem("website") as HTMLInputElement).value,
       date: (form.elements.namedItem("date") as HTMLInputElement)?.value,
@@ -60,168 +110,146 @@ export default function ContactUs() {
     }
   };
 
+  const disabled = isBusy || isDisabled;
+
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-5xl mx-auto">
-        {/* Header Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Contact</h1>
-          <p className="text-xl text-gray-600">
-            Request an audit or ask a question. We dont just read code, we read
-            your messages too.
-          </p>
+    <div className="mx-6 my-16 lg:mx-[20vw]">
+      <h1 className="md:leading-normal sm:leading-normal lg:leading-tight lg:text-5xl md:text-3xl sm:text-3xl font-bold">
+        Contact
+      </h1>
+      <p className="mt-4 text-xl text-zinc-500">
+        Request an audit or ask a question. We don&apos;t just read code, we read your
+        messages too.
+      </p>
+
+      <form
+        ref={formRef}
+        onSubmit={handleSubmit}
+        aria-busy={isBusy}
+        className="mt-10 grid gap-6 border border-zinc-200 p-6 md:grid-cols-2 md:p-8 lg:grid-cols-2 lg:p-10"
+      >
+        {formResponse && (
+          <div
+            role="status"
+            aria-live="polite"
+            className={`${fullWidthClass} border p-4 text-sm ${
+              formResponse.type === "error"
+                ? "border-red-200 bg-red-50 text-red-700"
+                : "border-deepblue/30 bg-deepblue/5 text-deepblue"
+            }`}
+          >
+            {formResponse.message}
+          </div>
+        )}
+
+        <div>
+          <Label htmlFor="name" required>Your name</Label>
+          <input id="name" type="text" name="name" required className={inputClass} />
+        </div>
+        <div>
+          <Label htmlFor="tguser" required>Telegram username</Label>
+          <input
+            id="tguser"
+            type="text"
+            name="tguser"
+            required
+            placeholder="@username"
+            className={inputClass}
+          />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="bg-white p-8 hover:-translate-y-1 transition-transform duration-300">
-            {formResponse && (
-              <div
-                role="status"
-                aria-live="polite"
-                className={`mt-4 p-4 ${
-                  formResponse.type === "error"
-                    ? "bg-red-50 text-red-700"
-                    : "bg-green-50 text-deepblue"
-                }`}
-              >
-                {formResponse.message}
-              </div>
-            )}
-            <form
-              ref={formRef}
-              onSubmit={handleSubmit}
-              className="space-y-6"
-              aria-busy={isBusy}
+        <div>
+          <Label htmlFor="service" required>Service</Label>
+          <div className="relative mt-2">
+            <select
+              ref={serviceRef}
+              id="service"
+              name="service"
+              required
+              defaultValue=""
+              className={`h-12 appearance-none pr-10 ${fieldClass}`}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Your name*
-                  </label>
-                  <input
-                    id="name"
-                    type="text"
-                    name="name"
-                    required
-                    className="mt-1 block w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 bg-gray-50"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="tguser"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Telegram username*
-                  </label>
-                  <input
-                    id="tguser"
-                    type="text"
-                    name="tguser"
-                    required
-                    className="mt-1 block w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 bg-gray-50"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label
-                  htmlFor="protocol"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Protocol name*
-                </label>
-                <input
-                  id="protocol"
-                  type="text"
-                  name="protocol"
-                  required
-                  className="mt-1 block w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 bg-gray-50"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="website"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Website URL*
-                </label>
-                <input
-                  id="website"
-                  type="url"
-                  name="website"
-                  required
-                  className="mt-1 block w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 bg-gray-50"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="date"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Preferred audit completion date
-                </label>
-                <input
-                  id="date"
-                  type="date"
-                  name="date"
-                  min={new Date().toISOString().split("T")[0]}
-                  className="mt-1 block w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 bg-gray-50"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="github"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Github repo link
-                </label>
-                <input
-                  id="github"
-                  type="url"
-                  name="github"
-                  className="mt-1 block w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 bg-gray-50"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Scope and additional information
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  className="mt-1 block w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 bg-gray-50"
-                />
-              </div>
-
-              <div>
-                <button
-                  type="submit"
-                  disabled={isBusy || isDisabled}
-                  className={`w-full flex justify-center py-3 px-4 border text-sm font-medium
-                  ${
-                    isBusy || isDisabled
-                      ? "bg-gray-400 text-white cursor-not-allowed border-gray-400"
-                      : "text-white bg-deepblue hover:bg-white hover:text-deepblue border-deepblue duration-700"
-                  }`}
-                >
-                  {isBusy ? "Sending..." : "Send request"}
-                </button>
-              </div>
-            </form>
+              <option value="">Select a service</option>
+              {SERVICES.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+            <ChevronDown
+              aria-hidden="true"
+              className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-500"
+            />
           </div>
         </div>
-      </div>
+        <div>
+          <Label htmlFor="protocol" required>Protocol name</Label>
+          <input id="protocol" type="text" name="protocol" required className={inputClass} />
+        </div>
+
+        <div>
+          <Label htmlFor="website" required>Website URL</Label>
+          <input
+            id="website"
+            type="url"
+            name="website"
+            required
+            placeholder="https://"
+            className={inputClass}
+          />
+        </div>
+        <div>
+          <Label htmlFor="date">Preferred audit completion date</Label>
+          <input
+            id="date"
+            type="date"
+            name="date"
+            min={new Date().toISOString().split("T")[0]}
+            className={inputClass}
+          />
+        </div>
+
+        <div className={fullWidthClass}>
+          <Label htmlFor="github">GitHub repo link</Label>
+          <input
+            id="github"
+            type="url"
+            name="github"
+            placeholder="https://github.com/org/repo"
+            className={inputClass}
+          />
+        </div>
+
+        <div className={fullWidthClass}>
+          <Label htmlFor="message">Scope and additional information</Label>
+          <textarea
+            id="message"
+            name="message"
+            rows={5}
+            placeholder="Contracts in scope, commit, timeline, anything we should know."
+            className={`mt-2 py-3 ${fieldClass}`}
+          />
+        </div>
+
+        <div
+          className={`${fullWidthClass} flex flex-col-reverse gap-4 md:flex-row md:items-center md:justify-between lg:flex-row lg:items-center lg:justify-between`}
+        >
+          <p className="text-sm text-zinc-500">
+            <span className="text-deepblue">*</span> Required
+          </p>
+          <button
+            type="submit"
+            disabled={disabled}
+            className={`w-full border px-10 py-3 font-bold transition-colors duration-700 md:w-auto lg:w-auto ${
+              disabled
+                ? "cursor-not-allowed border-zinc-300 bg-zinc-300 text-white"
+                : "border-deepblue bg-deepblue text-white hover:bg-white hover:text-deepblue"
+            }`}
+          >
+            {isBusy ? "Sending..." : "Send request"}
+          </button>
+        </div>
+      </form>
     </div>
   );
 }

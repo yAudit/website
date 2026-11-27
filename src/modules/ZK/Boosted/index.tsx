@@ -168,7 +168,7 @@ function BoostedAuditsSection() {
           
           {/* What are Boosted Audits CTA */}
           <button
-            onClick={() => window.location.href = '/services'}
+            onClick={() => window.location.href = '/services/boosted-audits'}
             className="inline-flex items-center gap-2 text-deepblue px-6 py-3 text-lg font-medium transition-colors cursor-pointer group border border-deepblue"
           >
             <Shield className="w-5 h-5" />

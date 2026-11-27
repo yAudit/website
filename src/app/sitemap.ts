@@ -6,7 +6,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://yaudit.dev";
   const routes = [
     "",
-    "/services",
+    "/services/smart-contract-audits",
+    "/services/boosted-audits",
     "/team",
     "/fellowships",
     "/yborg",

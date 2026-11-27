@@ -1,5 +1,4 @@
  
-import Link from "next/link";
 import {
   m1video,
   m1guestLectures,
@@ -18,6 +17,7 @@ import {
   m2report,
 } from "../Data/zblock2";
 import { fellows, yacteam, summateam, guest } from "../Data/zblock2";
+import ZBlockParticipants from "@/components/ZBlockParticipants";
 import {
   Discussion,
   VideoSection,
@@ -31,16 +31,19 @@ import Image from "next/image";
 function ZBlock2Modules() {
   return (
     <>
-      <div className="mt-24">
+      <div className="mt-16">
         <div className="grid lg:grid-cols-5 gap-8">
-          <div className="lg:col-span-2 mt-28">
+          {/* Side by side (lg), the logos sit right of the text, centred
+              against it. On narrower screens they come after the text, so the
+              title starts at the top as on the other pages. */}
+          <div className="order-last lg:order-2 lg:col-span-2 mt-8 lg:mt-0 lg:self-center">
             <img alt="" src="/zblock/pse-summa-yac.svg" className="h-[24rem] " />
           </div>
           <div className="lg:col-span-3">
             <h1 className="md:leading-normal sm:leading-normal lg:leading-tight lg:text-5xl md:text-3xl sm:text-3xl font-bold lg:mb-10">
-              zBlock2
+              zBlock 2
             </h1>
-            <p className="text-gray-600 text-justify">
+            <p className="text-gray-600">
               From Jan 2024 to May 2024, we held our second zero-knowledge
               auditing fellowship centered around the PSE-Halo2 development
               framework and the KZG commitment scheme. Participants engaged in
@@ -82,14 +85,6 @@ function ZBlock2Modules() {
               exceptional fellows were awarded for their outstanding
               contributions and performance throughout the cohort.
             </p>
-            <p className="mt-4 font-semibold">
-              See also :{" "}
-              <Link href={"/zBlock1"}>
-                <button className="text-deepblue hover:underline duration-700">
-                  zBlock1
-                </button>
-              </Link>
-            </p>
           </div>
         </div>
         <h2
@@ -98,109 +93,14 @@ function ZBlock2Modules() {
         >
           Participants
         </h2>
-        <div className="grid lg:grid-cols-5 gap-8">
-          <div className="lg:col-span-1 flex flex-col py-6 bg-zinc-50 border border-zinc-100">
-            <img alt="" src="/logo.svg" className="h-8 mb-6" />
-            <ul className="list-disc text-zinc-700 px-12">
-              {yacteam.map((member) => {
-                return (
-                  <li key={member.name}>
-                    <a
-                      href={member.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className=" hover:underline duration-700"
-                    >
-                      {member.name}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-          <div className="lg:col-span-2 flex flex-col p-4 px-12 bg-zinc-50 border border-zinc-100">
-            <h4 className="text-xl py-4 text-center font-semibold mb-4">
-              Fellows
-            </h4>
-            <div className="flex flex-row sm:flex-col justify-between">
-              <ul className="list-disc text-zinc-700">
-                {fellows.slice(0, 6).map((member) => {
-                  return (
-                    <li key={member.name}>
-                      <a
-                        href={member.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:underline duration-700"
-                      >
-                        {member.name}
-                        {member.isResident ? "*" : ""}
-                      </a>
-                    </li>
-                  );
-                })}
-              </ul>
-              <ul className="list-disc text-zinc-700">
-                {fellows.slice(6, 12).map((member) => {
-                  return (
-                    <li key={member.name}>
-                      <a
-                        href={member.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:underline duration-700"
-                      >
-                        {member.name}
-                        {member.isResident ? "*" : ""}
-                      </a>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-            <p className="text-center p-4 text-zinc-700"> * Top Fellows</p>
-          </div>
-          <div className="lg:col-span-1 flex flex-col p-6 px-12 bg-zinc-50 border border-zinc-100">
-            <img alt="" src="/zblock/pse-summa.svg" className="h-10 mb-6" />
-            <ul className="list-disc text-zinc-700">
-              {summateam.map((member) => {
-                return (
-                  <li key={member.name}>
-                    <a
-                      href={member.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className=" hover:underline duration-700"
-                    >
-                      {member.name}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-          <div className="lg:col-span-1 flex flex-col p-4 px-8 bg-zinc-50 border border-zinc-100">
-            <h4 className="text-xl py-4 text-center font-semibold">
-              Guest Speakers
-            </h4>
-            <ul className="list-disc text-zinc-700">
-              {guest.map((member) => {
-                return (
-                  <li key={member.name}>
-                    <a
-                      href={member.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className=" hover:underline duration-700"
-                    >
-                      {member.name}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        </div>
+        <ZBlockParticipants
+          groups={[
+            { title: "yAudit", logo: "/logo.svg", members: yacteam },
+            { title: "PSE and Summa", logo: "/zblock/pse-summa.svg", members: summateam },
+            { title: "Guest Speakers", members: guest },
+          ]}
+          fellows={fellows}
+        />
         <div className="flex flex-col gap-4 justify-center text-zinc-800 text-center mt-12">
           <h4 className="text-xl font-semibold">Supported by </h4>
           <img alt="" src="/zblock/ef.svg" className="h-16 inline-block" />

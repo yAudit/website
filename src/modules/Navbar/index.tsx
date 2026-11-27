@@ -9,6 +9,8 @@ interface NavItem {
   label: string;
   href: string;
   external?: boolean;
+  /** Shorter name shown next to the logo, when the label does not fit there */
+  section?: string;
 }
 
 interface NavGroup {
@@ -19,12 +21,25 @@ interface NavGroup {
 type NavEntry = NavItem | NavGroup;
 
 const NAV: NavEntry[] = [
-  { label: "Services", href: "/services" },
+  {
+    label: "Services",
+    items: [
+      {
+        label: "Smart Contract Audits",
+        href: "/services/smart-contract-audits",
+        section: "SC Audits",
+      },
+      { label: "ZK Audits", href: "/zk" },
+      { label: "Boosted Audits", href: "/services/boosted-audits" },
+    ],
+  },
   { label: "yAgent", href: "/yagent" },
   {
     label: "Programs",
     items: [
       { label: "Fellowships", href: "/fellowships" },
+      { label: "zBlock 1", href: "/zBlock1" },
+      { label: "zBlock 2", href: "/zBlock2" },
       { label: "yBorg", href: "/yborg" },
     ],
   },
@@ -190,8 +205,8 @@ export function Navbar({ menuOpen, setMenuOpen }: Props) {
         >
           <img src="/logo.svg" className="h-9 w-auto" alt="yAudit" />
           {activeItem && (
-            <span className="hidden border-l border-zinc-300 pl-3 text-sm font-semibold uppercase tracking-[0.18em] text-zinc-500 md:inline lg:inline">
-              {activeItem.label}
+            <span className="hidden whitespace-nowrap border-l border-zinc-300 pl-3 text-sm font-semibold uppercase tracking-[0.18em] text-zinc-500 md:inline lg:inline">
+              {activeItem.section ?? activeItem.label}
             </span>
           )}
         </Link>
