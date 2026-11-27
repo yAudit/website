@@ -174,7 +174,7 @@ export default function HeroSection() {
           
           {/* CTA, worded like the Services pages */}
           <div className="flex flex-row sm:flex-col gap-4 items-center justify-start sm:justify-center mb-8">
-            <Link href="/contact-us">
+            <Link href="/contact-us?service=zk-audit">
               <button className="px-8 py-4 text-base text-white font-bold bg-deepblue hover:bg-white hover:text-deepblue hover:border hover:border-deepblue duration-700 hover:-translate-y-1 transition-transform">
                 Start your Audit
               </button>

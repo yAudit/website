@@ -29,7 +29,7 @@ export default function Fellows() {
           <p className="text-zinc-500 mb-8">
             This unique model combines the depth of expert analysis with the breadth of crowdsourced security review, ensuring comprehensive coverage at multiple security layers. Past boosted audits have uncovered critical issues that traditional audits missed, protecting millions in user funds.
           </p>
-          <Link href={"/contact-us"}>
+          <Link href={"/contact-us?service=boosted-audit"}>
             <button className="px-8 py-3 sm:w-full text-base text-white font-bold bg-deepblue hover:bg-white hover:text-deepblue hover:border hover:border-deepblue duration-700">
               Start your Audit
             </button>

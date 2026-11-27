@@ -41,6 +41,7 @@ export const handler: Handler = async (event, context) => {
 You got a new message from your website contact form:
 Name: ${body.name}
 Telegram username: ${body.tguser}
+Service: ${body.service || "Not specified"}
 Protocol: ${body.protocol}
 Preferred audit completion date: ${body.date}
 Website: ${body.website}

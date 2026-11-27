@@ -1,6 +1,19 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
+
+// The services a request can be about. The Services pages link here with
+// ?service=<value>, so the request arrives tagged with the option the visitor
+// picked; they can still change it.
+const SERVICES = [
+  { value: "full-audit", label: "Full Audit" },
+  { value: "focused-audit", label: "Focused Audit" },
+  { value: "yagent-review", label: "yAgent Review" },
+  { value: "update-review", label: "Update Review" },
+  { value: "zk-audit", label: "ZK Audit" },
+  { value: "boosted-audit", label: "Boosted Audit" },
+  { value: "not-sure", label: "Not sure yet" },
+];
 
 export default function ContactUs() {
   const [isDisabled, setIsDisabled] = useState(false);
@@ -10,6 +23,16 @@ export default function ContactUs() {
     message: string;
   } | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
+  const serviceRef = useRef<HTMLSelectElement>(null);
+
+  // Preselect the service named in the URL. The page is exported as static
+  // HTML, so the URL is only known in the browser.
+  useEffect(() => {
+    const service = new URLSearchParams(window.location.search).get("service");
+    if (serviceRef.current && SERVICES.some((option) => option.value === service)) {
+      serviceRef.current.value = service as string;
+    }
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -23,6 +46,10 @@ export default function ContactUs() {
     const formData = {
       name: (form.elements.namedItem("name") as HTMLInputElement).value,
       tguser: (form.elements.namedItem("tguser") as HTMLInputElement).value,
+      service:
+        SERVICES.find(
+          (option) => option.value === (form.elements.namedItem("service") as HTMLSelectElement).value
+        )?.label ?? "",
       protocol: (form.elements.namedItem("protocol") as HTMLInputElement).value,
       website: (form.elements.namedItem("website") as HTMLInputElement).value,
       date: (form.elements.namedItem("date") as HTMLInputElement)?.value,
@@ -124,6 +151,29 @@ export default function ContactUs() {
                     className="mt-1 block w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 bg-gray-50"
                   />
                 </div>
+              </div>
+
+              <div>
+                <label
+                  htmlFor="service"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Service
+                </label>
+                <select
+                  ref={serviceRef}
+                  id="service"
+                  name="service"
+                  defaultValue=""
+                  className="mt-1 block w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 bg-gray-50"
+                >
+                  <option value="">Select a service</option>
+                  {SERVICES.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
               </div>
 
               <div>
